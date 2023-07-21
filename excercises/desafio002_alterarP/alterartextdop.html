@@ -23,28 +23,28 @@
     const paragrafo = document.querySelector('p')
     const imagem = document.querySelector('.trono')
     
-    function alterarP() {
-        paragrafo.innerText = 'O rei retornou'
+    function alterarTexto(element, novoTexto) {
+        element.innerText = novoTexto
     }
 
-    function retornarP() {
-        paragrafo.innerText = 'O inverno está chegando'
-    }
-    
-    function alterarP_I() {
-        paragrafo.innerText = 'O rei retornou'
-    }
-    
-    function retornarP() {
-        paragrafo.innerText = 'O inverno está chegando'
+    paragrafo.addEventListener('mouseenter', () => {
+    alterarTexto(paragrafo, 'O rei retornou.');
+  });
 
-    }
+  paragrafo.addEventListener('mouseleave', () => {
+    alterarTexto(paragrafo, 'O inverno está chegando.');
+  });
 
-    paragrafo.addEventListener('mouseenter', alterarP)
-    paragrafo.addEventListener('mouseleave', retornarP)
-    imagem.addEventListener('mouseenter', alterarP)
-    imagem.addEventListener('mouseleave', retornarP)
-</script>
+  imagem.addEventListener('mouseenter', () => {
+    alterarTexto(paragrafo, 'O rei retornou.');
+  });
+
+  imagem.addEventListener('mouseleave', () => {
+    alterarTexto(paragrafo, 'O inverno está chegando.');
+  });
+
+    </script>
+</terarTudo>
 
 </body>
 </html>
