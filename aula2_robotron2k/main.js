@@ -1,12 +1,19 @@
-const Robotron = document.querySelector('#Robotron')
+const controle = document.querySelectorAll('[data-controle]')
 
-Robotron.addEventListener('click', (evento) => {
-    console.log(evento)
+controle.forEach( (elemento) => {
+  elemento.addEventListener('click', (evento) => {
+    manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
+  })
 })
 
-function dizOi() {
-  console.log("oi")
-  console.log('Bem vindo fdp')
-} 
+function manipulaDados(operacao, controle) {
+  
+  const peças = controle.querySelector('[data-contador]')
 
-dizOi()
+  if(operacao === "-") {
+    peças.value = parseInt(peças.value) - 1
+
+  } else {
+    peças.value = parseInt(peças.value) + 1
+  }
+}
