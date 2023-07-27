@@ -19,12 +19,13 @@ if(fullstackOuEspecializacao == 1) {
 
 let maislinguagem = prompt('Gostaria de aprender mais alguma linguagem? ')
 
-var upperMaisLinguagem = maislinguagem.toUpperCase()
+let upperMaislinguagem = maislinguagem.toUpperCase();
 
-while (upperMaisLinguagem === 'SIM') {
-    let novaLinguagem = prompt('Qual?')
-    maislinguagem = prompt('Gostaria de aprender mais alguma linguagem? ')
-    if (maislinguagem !== 'SIM') {
+while (upperMaislinguagem === 'SIM') {
+    if (upperMaislinguagem !== 'SIM') {
         break
+    } else {
+        upperMaislinguagem = prompt('Gostaria de aprender mais alguma linguagem? ')
+        let novaLinguagem = prompt('Qual?')
     }
 }
