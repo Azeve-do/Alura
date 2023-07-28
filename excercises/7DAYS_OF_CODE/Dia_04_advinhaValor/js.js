@@ -1,22 +1,37 @@
-/* function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
-  } */
-  
 var gerador = Math.floor(Math.random() * (0, 10))
-var resposta = document.querySelector('#resposta')
-var enviar = document.querySelector('input[type=submit]')
 const formulario = document.querySelector('#meuForm')
+
+var tentativas = 3 
 
 console.log(gerador)
 
 formulario.addEventListener('submit', (event) => {
     event.preventDefault();
     
+    var resposta = document.querySelector('#resposta').value;
+    
+    if (resposta != gerador) {
+        alert('Resposta errada, tente novamente,' + ` mais ${tentativas} tentativas!`)  
+    }
+
+    else if(resposta == gerador) {
+        alert('Parabéns você acertou! Jogo resetado.')
+        location.reload();
+    }
+
+    while(tentativas > 0) {
+        tentativas = tentativas - 1
+
+        if (tentativas = 0) {
+        alert('tentativas encerradas, jogo resetado!' + ` Número sorteado era ${gerador}`)
+        location.reload();
+    }
+}})
+
+/* 
     if(resposta != gerador) {
         alert('Resposta errada, tente novamente' + ` estava pensando no ${gerador}` + ` e você respondeu ${resposta}`)
     } else if (resposta == gerador) {
         alert('Parabéns você acertou')
-    } 
-})
+        location.reload();
+    }  */
