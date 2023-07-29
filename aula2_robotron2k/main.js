@@ -34,6 +34,28 @@ const pecas1 = {
   }
 }
 
+const imgTrocar = document.getElementById('Robotron')
+const trocacor = document.getElementById('trocacor')
+
+/* function trocarImagem () {
+  if(imgTrocar.src.endsWith('img/robotronblack.png')) {
+    imgTrocar.src = "img/robotronyellow/robotronamarelo.png"
+  } else {
+    imgTrocar.src = "img/robotronblue/robotronazul.png"
+  }
+} */
+
+
+trocacor.addEventListener('click', () => {
+if(imgTrocar.src.endsWith('img/robotronblack.png')) {
+  imgTrocar.src = 'img/robotronyellow/robotronamarelo.png'
+} else {
+  imgTrocar.src = 'img/robotronblue/robotronazul.png'
+}
+
+})
+
+
 controle.forEach( (elemento) => {
   elemento.addEventListener('click', (evento) => {
     manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
