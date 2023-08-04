@@ -4,6 +4,7 @@ const itens = JSON.parse(localStorage.getItem('itens')) || []
 
 itens.forEach( (elemento) => {
     criaElemento(elemento)
+    console.log(elemento)
 })
 
 form.addEventListener('submit', (evento) => {
