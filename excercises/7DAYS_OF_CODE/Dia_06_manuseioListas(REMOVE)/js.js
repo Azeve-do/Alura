@@ -85,5 +85,4 @@ function removerValor () {
     lista.appendChild(categoriaFrutas)
     lista.appendChild(categoriaAçougue)
     lista.appendChild(categoriaMercearia)
-
 }

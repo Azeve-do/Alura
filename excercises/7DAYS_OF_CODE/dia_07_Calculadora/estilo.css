@@ -1,0 +1,34 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #000000c9;
+    color: whitesmoke;
+    font: normal 16px Calibri;
+
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+table, td, th {
+    margin: auto;
+
+    padding: 35px;
+    border: solid 1px black;
+    border-collapse: collapse;
+
+    background-color: rgba(137, 43, 226, 0.356);
+}
+
+input {
+    border: solid 1px black;
+    border-radius: 10px 0px 10px 0px;
+
+    margin-le;
+}
