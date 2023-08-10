@@ -7,34 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Calculadora</h1>
+   <h1>Calculadora</h1>
+   
+   <input type="number" min="0" id="operações">
 
-    <table>
-     <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-     </tr>
-     <tr>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-     </tr>
-     <tr>
-        <td>9</td>
-        <th>+</th>
-        <th>-</th>
-        <th>/</th>
-     </tr>
-     <tr>
-        <th>*</th>
-        <td></td>
-        <td></td>
-        <td></td>
-     </tr>
-    </table>
-    <input type="number" min="0" id="operações">
+   <section id="teclado">
+      <input type="button" value="1" class="numbers">
+      <input type="button" value="2" class="numbers">
+      <input type="button" value="3" class="numbers">
+      <input type="button" value="4" class="numbers">
+      <input type="button" value="5" class="numbers">
+      <input type="button" value="6" class="numbers">
+      <input type="button" value="7" class="numbers">
+      <input type="button" value="8" class="numbers">
+      <input type="button" value="9" class="numbers">
+      <input type="button" value="+" onclick="soma()">
+      <input type="button" value="-">
+      <input type="button" value="/">
+      <input type="button" value="*">
+      <input type="button" value="=" onclick="resultado()">
+   </section>
+
+    <script src="js.js"></script>
 </body>
 </html>
