@@ -1,0 +1,35 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #000000c9;
+    color: whitesmoke;
+    font: normal 16px Calibri;
+
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    background-color: rgba(137, 43, 226, 0.514);
+    color: rgba(255, 255, 255, 0.836);
+
+    border: solid 1px black;
+    border-radius: 10px 0px 10px 0px;
+    display: block;
+
+    width: 300px;
+    height: 45px;
+    padding: 1px;
+    margin: auto;
+    margin-bottom: 15px;
+    
+    font: bolder 35px Calibri;
+    text-align: center;
+}
