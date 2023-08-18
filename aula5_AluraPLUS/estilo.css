@@ -4,6 +4,7 @@
 }
 
 :root {
+    --botao-azul-efeito: #167bf7a2;
     --branco-principal: #FFFFFF;
     --cinza-secundario: #c0c0c0;
     --azul-botao: #167bf7;
@@ -62,10 +63,21 @@ body {
     margin-bottom: 1em;
 }
 
+.container_botao:hover {
+    background-color: var(--botao-azul-efeito);
+    color: rgb(0, 0, 0);
+    transition: 0.85s;
+}
+
 .botao_secundario {
     background-color: transparent;
 
     border: 2px solid var(--branco-principal);
+}
+
+.botao_secundario:hover {
+    background-color: rgba(255, 255, 255, 0.473);
+    transition:  0.85s;
 }
 
 .container_aviso {
