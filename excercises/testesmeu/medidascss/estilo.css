@@ -1,0 +1,21 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #000000c9;
+    color: whitesmoke;
+    font: normal 1rem Calibri;
+}
+
+.imagem__wallpaper {
+    height: 100vh;
+    background-image: url(wp2336999.jpg)
+}
+
+@media (max-width: 1000px) { 
+    .imagem__wallpaper {
+        background-image: url(3622d06912fca8a187d4bedc4b2e6dfe.png);
+    }
+}
