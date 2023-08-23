@@ -3,8 +3,34 @@
     padding: 0px;
 }
 
+body, html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background-color: #000000c9;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.titulo {
+    width: 400px;
+
+    
+    
+    font: normal 0.85rem Calibri;
+    color: rgb(209, 206, 180);
+}
+
+
+/* 
 @media screen and (min-device-width: 900px) {
     body {
         background-color: #000000c9;
     }
-}
+} */
