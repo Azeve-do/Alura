@@ -1,16 +1,23 @@
+@import url("styles/header.css");
+
 * {
     margin: 0px;
     padding: 0px;
 }
 
+body, html {
+    width: 100vw;
+    height: 100vh;
+}
+
 :root {
     --cor-de-fundo: #EBECEE;
+
+    --laranja: #eb9b00; 
+    --branco: #ffffff;
+    --azul-degrade: linear-gradient(160deg, #002F52 0%, #326589 100%)
 }
 
 body {
     background-color: var(--cor-de-fundo);
-}
-
-h1 {
-    background-color: white;
 }
