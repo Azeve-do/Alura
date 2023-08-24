@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+}
+
+:root {
+    --azul-menu: rgb(154, 202, 204);
+}
+
+body {
+    background-color: var(--azul-menu);
+}
+
+.teste {
+    border: solid 10px black;
+
+    height: 25rem;
+    width: 25rem;
+    
+}
