@@ -1,0 +1,34 @@
+.cabeçalho {
+    background-image: var(--azul-menu);
+}
+
+.menu {
+    height: 125px;
+
+    margin-left: 125px;
+}
+
+.menu__opçao {
+    text-decoration: none;
+    
+    color: var(--branco);
+    font: normal 1.3rem Calibri;
+    padding: 20px;
+
+    display: inline-block;
+}
+
+.menu__opçao:hover {
+    color: rgb(104, 216, 231);
+    transition: 0.5s;
+}
+
+.menu__imagem {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    top: 2%;
+    right: 94%;
+}
+

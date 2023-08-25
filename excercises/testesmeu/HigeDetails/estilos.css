@@ -1,6 +1,15 @@
+@import url(estilos/header.css);;
+
 * {
     margin: 0px;
     padding: 0px;
+}
+
+:root {
+    --fundo-principal: #EBECEE;
+    --branco: #ffffff;
+    --azul-degrade: 'cor';
+    --azul-menu: linear-gradient(to top, #2433c2c9, #82b2df);
 }
 
 body, html {
@@ -8,15 +17,15 @@ body, html {
     height: 100vh;
 }
 
-:root {
-    --azul-menu: rgb(154, 202, 204);
-}
-
 body {
-    background-color: var(--azul-menu);
+    background-color: var(--fundo-principal);
 }
 
-.imagem-logo {
-    width: 100px;
-    height: 100px;
+.carrossel__imagens {
+    display: none;
+}
+
+.apresentaçao__imagem {
+    height: 20px;
+    width: 20px;
 }
