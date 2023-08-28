@@ -1,5 +1,7 @@
 .cabeçalho {
     background-image: var(--azul-menu);
+
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.596);
 }
 
 .menu {

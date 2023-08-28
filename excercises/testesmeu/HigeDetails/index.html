@@ -18,11 +18,23 @@
     </header>
 
     <section class="carrossel">
-        <div class="carrossel__imagens">
-            <img src="imagens-sofá/sofa-limpo (1).jpeg" alt="">
-            <img src="imagens-sofá/sofa-limpo (2).jpeg" alt="">
-            <img src="imagens-sofá/sofa-sujo-inteiro.jpeg" alt="">
-        </div>
+        <ul class="slider">
+            <li>
+                <input type="radio" id="slide1" name="slide" checked>
+                <label for="slide1"></label>
+                <img src="imagens-sofá/sofa-limpo (1).jpeg" alt="sofá lavado">
+            </li>
+            <li>
+                <input type="radio" id="slide2" name="slide">
+                <label for="slide2"></label>
+                <img src="imagens-sofá/sofa-limpo (2).jpeg" alt="sofá limpo">
+            </li>
+            <li>
+                <input type="radio" id="slide3" name="slide">
+                <label for="slide3"></label>
+                <img src="imagens-sofá/sofa-sujo-inteiro.jpeg" alt="sofá sujinho">
+            </li>
+        </ul>
     </section>
 
     <section class="apresentaçao">
