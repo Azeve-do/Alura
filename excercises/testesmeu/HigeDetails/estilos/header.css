@@ -1,23 +1,22 @@
 .cabeçalho {
     background-image: var(--azul-menu);
 
+    
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.596);
-}
-
-.menu {
-    height: 125px;
-
-    margin-left: 125px;
+    
+    display: flex;
+    align-items: end;
 }
 
 .menu__opçao {
     text-decoration: none;
     
     color: var(--branco);
-    font: normal 1.3rem Calibri;
-    padding: 20px;
+    font: normal 1rem var(--fonte-padrao);
+    text-transform: uppercase;
 
     display: inline-block;
+    padding: 1rem;
 }
 
 .menu__opçao:hover {
@@ -27,10 +26,8 @@
 
 .menu__imagem {
     width: 100px;
-    height: 100px;
+    height: 100%;
 
-    position: absolute;
-    top: 2%;
-    right: 94%;
+    display: block;
 }
 

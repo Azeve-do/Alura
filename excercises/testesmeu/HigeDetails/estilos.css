@@ -1,4 +1,5 @@
-@import url(estilos/header.css);;
+@import url(estilos/header.css);
+@import url(estilos/carrossel.css);
 
 * {
     margin: 0px;
@@ -6,6 +7,7 @@
 }
 
 :root {
+    --fonte-padrao: "Poppins";
     --fundo-principal: #EBECEE;
     --branco: #ffffff;
     --azul-degrade: 'cor';
@@ -26,62 +28,3 @@ body {
     width: 20px;
 }
 
-.carrossel {
-    display: block;
-    height: 0px;
-    width: 350px;
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
-}
-
-.carrossel > ul > li {
-    list-style: none;
-    position: absolute;
-}
-
-.carrossel > ul > li > img {
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    vertical-align: top;
-}
-
-.slider input {
-    display: none;
-}
-
-.slider label {
-    background-color: #ffffff;
-    color: red;
-    font-weight: bold;
-    bottom: 10px;
-    cursor: pointer;
-    display: block;
-    height: 15px;
-    position: absolute;
-    width: 15px;
-    z-index: 1;
-}
-
-.slider li:nth-child(1) label {
-    left: 50px;
-}
-
-.slider li:nth-child(2) label {
-    left: 80px;
-}
-
-.slider li:nth-child(3) label {
-    left: 110px;
-}
-
-.slider img {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.slider li input:checked ~ img {
-    opacity: 1;
-    visibility: visible;
-}
