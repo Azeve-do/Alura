@@ -1,0 +1,30 @@
+body {
+    background-color: #000000c9;
+    color: whitesmoke;
+    font: normal 16px Calibri;
+}
+
+.container {
+    background-color: lightblue;
+    height: 500px;
+    width: 400px;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: solid 1px black;
+    background-color: aquamarine;
+    color: #000000;
+
+    width: 100px;
+    height: 100px;
+}
