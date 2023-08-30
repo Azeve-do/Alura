@@ -82,7 +82,7 @@
               <div class="swiper-slide"><img src="imagens-carrossel/Acessibilidade.png" alt="Livro de acessebilidade"></div>
               <div class="swiper-slide"><img src="imagens-carrossel/Angular.png" alt="Livro sobre Angular"></div>
               <div class="swiper-slide"><img src="imagens-carrossel/Guia Front-end.png" alt="Livro Guia de Front-End"></div>
-              ...
+              
             </div>
             
           
@@ -91,9 +91,99 @@
             <div class="swiper-button-next"></div>
           
           </div>
+
+          <div class="card">
+            <div class="card__descrição">
+                <div class="descrição">
+                    <h3 class="descrição__titulo">Talvez você também se interesse por...</h3>
+                    <h2 class="descrição__titulo-livro">Angular 11 e Firebase</h2>
+                    <p class="descrição__texto">Construindo uma aplicação integrada com a plataforma do Google</p>
+                </div>
+                <img src="imagens-card/Mask group.png" alt="Imagem capa do Livro" class="descrição__imagem">
+            </div>
+            <div class="card__botões">
+                <ul class="botões">
+                    <li class="botões__item"><img src="imagens-card/Favoritos.svg" alt="Icone de coração (favoritos)"></li>
+                    <li class="botões__item"><img src="imagens-card/Sacola.png" alt="Icone de sacola de compras"></li>
+                </ul>
+                <a href="#" class="botões__ancora">Saiba mais</a>
+            </div>
+          </div>
     </section>
 
+    <section class="carrossel-maisVendidos">
+        <h2 class="carrossel__titulo">Mais vendidos</h2>
 
+        <div class="swiper">
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="imagens-carrossel2/Javascript.png" alt="Livro de JS"></div>
+              <div class="swiper-slide"><img src="imagens-carrossel2/Arquitetura.png" alt="Livro sobre Arquitetura de Software"></div>
+              <div class="swiper-slide"><img src="imagens-carrossel2/Nodejs.png" alt="Livro Guia de NodeJS"></div>
+              <div class="swiper-slide"><img src="imagens-carrossel2/ReactNative.png" alt="Livro Guia de ReactNative"></div>
+    
+            </div>
+            
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+          </div>
+
+          <div class="card">
+
+            <div class="card__descrição">
+                <div class="descrição">
+                    <img src="imagens-carrossel2/Estrelinhas.png" alt="Cinco estrelas">
+                    <h3 class="descrição__titulo">Autora do Mês</h3>
+                    <h2 class="descrição__titulo-livro">Juliana Agarikov</h2>
+                    <p class="descrição__texto">Analista de sistema e escritora, Juliana é especialta em Front-End.</p>
+                </div>
+                <img src="imagens-carrossel2/Perfil-escritora 1.png" alt="Capa do Livro de Juliana Agarikov">
+            </div>
+
+            <div class="card__botões">
+                <ul class="botões">
+                    <li class="botões__item"><img src="imagens-card/Favoritos.svg" alt="Icone de favoritos (Coração)"></li>
+                    <li class="botões__item"><img src="imagens-card/Sacola.png" alt="Icone de sacolas (Compras)"></li>
+                </ul>
+                <a href="#" class="botões__ancora">Saiba mais</a>
+            </div>
+
+          </div>
+        
+    </section>
+
+    <section class="tópicos">
+        <h2 class="tópicos__titulo">TÓPICOS VISITADOS RECENTEMENTE</h2>
+        <ul class="tópicos__lista">
+            <li class="tópicos__item"><a href="#" class="tópicos__link">Android</a></li>
+            <li class="tópicos__item"><a href="#" class="tópicos__link">Marketing Digital</a></li>
+            <li class="tópicos__item"><a href="#" class="tópicos__link">Startups</a></li>
+            <li class="tópicos__item"><a href="#" class="tópicos__link">HTML & CSS</a></li>
+            <li class="tópicos__item"><a href="#" class="tópicos__link">Python</a></li>
+            <li class="tópicos__item"><a href="#" class="tópicos__link">OO</a></li>
+            <li class="tópicos__item"><a href="#" class="tópicos__link">Java</a></li>
+        </ul>
+    </section>
+
+    <section class="contato">
+        <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
+        <p class="contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
+        <div class="email"><input type="email" placeholder="Cadastre seu e-mail" class="contato__email"></div>
+    </section>
+
+    <hr>
+
+    <footer class="rodapé">
+        <h2 class="rodapé__titulo">Grupo Alura</h2>
+    </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js.js"></script>
 </body>
