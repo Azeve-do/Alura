@@ -1,6 +1,9 @@
 .apresentação {
     background-color: azure;
     font-family: var(--fonte-padrao);
+    background: url('../imagens-sofá/download.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
 
     height: 350px;
     margin: 1em;
@@ -17,6 +20,12 @@ h2 {
 
 .apresentação__container-texto {
     margin-bottom: 2em;
+    color: var(--branco);
+    font-weight: 500;
+}
+
+.apresentação__container-titulo {
+    color: var(--branco);
 }
 
 .apresentação__container {
@@ -29,16 +38,10 @@ h2 {
 .apresentação__container-ancora {
     text-decoration: none;
     color: var(--branco);
-    background-color: rgba(7, 7, 241, 0.466);
+    background-color: rgb(0, 0, 255);
     width: 200px;
 
     padding: 1em;
     border: 1px solid black;
     border-radius: 22px;
-}
-
-.apresentação__container-ancora:hover {
-    background-color: rgba(0, 0, 255, 0.685);
-
-    transition: 0.5s;
 }

@@ -8,7 +8,7 @@
 .menu__opçao {
     text-decoration: none;
     color: var(--branco);
-    font: normal 0.85rem var(--fonte-padrao);
+    font: normal 0.95rem var(--fonte-padrao);
     text-transform: uppercase;
 }
 
