@@ -1,5 +1,7 @@
 @import url(estilos/header.css);
 @import url(estilos/carrossel.css);
+@import url(estilos/apresentaçao.css);
+@import url(estilos/rodapé.css);
 
 * {
     margin: 0px;
@@ -10,7 +12,6 @@
     --fonte-padrao: "Poppins";
     --fundo-principal: #EBECEE;
     --branco: #ffffff;
-    --azul-degrade: 'cor';
     --azul-menu: linear-gradient(to right, #2433c2c9, #152686);
 }
 
