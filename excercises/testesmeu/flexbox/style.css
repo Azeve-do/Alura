@@ -16,7 +16,7 @@ body {
 }
 
 .item {
-
+    flex-grow: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,4 +27,10 @@ body {
 
     width: 100px;
     height: 100px;
+}
+
+#testegrow {
+    align-content: ;
+    flex-grow: 1;
+    flex-basis: content;
 }
