@@ -16,6 +16,8 @@ body, html {
 }
 
 :root {
+
+    --preto: #000000;
     --cor-de-fundo: #EBECEE;
     --laranja: #eb9b00; 
     --branco: #ffffff;

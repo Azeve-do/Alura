@@ -9,6 +9,7 @@
 }
 
 :root {
+    --fonte-secundaria: "Josefin Sans";
     --fonte-padrao: "Poppins";
     --fundo-principal: #EBECEE;
     --branco: #ffffff;
