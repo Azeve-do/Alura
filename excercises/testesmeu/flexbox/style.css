@@ -30,7 +30,7 @@ body {
 }
 
 #testegrow {
-    align-content: ;
+    align-content: space-around;
     flex-grow: 1;
     flex-basis: content;
 }
