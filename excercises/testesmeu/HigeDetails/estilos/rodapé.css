@@ -4,24 +4,23 @@
 
     display: flex;
     justify-content: space-evenly;
-    padding: 0.75em;
+    padding: 0.5em;
 }
 
-.rodapé__contatos {
+.rodapé__lista {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
 }
 
-.rodapé__contatos-link {
+.rodapé__lista-link {
     text-decoration: none;
     color: var(--branco);
     font: normal 0.85rem Arial;
-
 }
 
-.rodapé__contatos-titulo {
+.rodapé__lista-titulo {
     text-decoration: none;
     color: var(--branco);
 
@@ -29,6 +28,6 @@
     font-weight: 700;
 }
 
-.rodapé__contatos-link:hover {
+.rodapé__lista-link:hover {
     color: blueviolet;
 }
