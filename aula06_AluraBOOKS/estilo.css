@@ -16,7 +16,9 @@ body, html {
 }
 
 :root {
-
+    
+    --cinza-claro: #858585;
+    --cinza: #474646;
     --preto: #000000;
     --cor-de-fundo: #EBECEE;
     --laranja: #eb9b00; 

@@ -53,7 +53,30 @@
         </div>
 
         <ul class="opções">
-            <li class="opções__item">Categorias</li>
+            <input type="checkbox" id="opções-menu" class="opções__botão">
+            <label for="opções-menu">
+                <li class="opções__item">Categorias</li>
+            </label>
+
+            <ul class="lista-menu">
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Programação</a>
+                </li>
+
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Front-End</a>
+                </li>
+
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Business</a>
+                </li>
+
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Design & UX</a>
+                </li>
+
+            </ul>
+
             <li class="opções__item"><a href="#" class="opções__link">Favoritos</a></li>
             <li class="opções__item"><a href="#" class="opções__link">Minha estante</a></li>
             
@@ -180,8 +203,10 @@
     </section>
 
     <section class="contato">
-        <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
-        <p class="contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
+        <div class="contato__descriçao">
+            <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
+            <p class="contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
+        </div>
         <div class="email"><input type="email" placeholder="Cadastre seu e-mail" class="contato__email"></div>
     </section>
 
@@ -189,6 +214,80 @@
 
     <footer class="rodapé">
         <h2 class="rodapé__titulo">Grupo Alura</h2>
+        <ul class="lista-rodapé">
+            <li class="lista-rodapé__titulo">Educação</li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-educaçao/Caelum.png" alt="Logo da Caelum">
+                <a href="#" class="lista-rodapé__link">Caelum</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-educaçao/CasaDoCodigo.png" alt="Logo da CasaDoCodigo">
+                <a href="#" class="lista-rodapé__link">Casa do Código</a>
+            </li>
+        </ul>
+        <ul class="lista-rodapé">
+            <li class="lista-rodapé__titulo">Educação Online</li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-eduOnline/Alura.png" alt="Logo da Alura">
+                <a href="#" class="lista-rodapé__link">Alura</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-eduOnline/AluraEmpresas.png" alt="Logo da Alura Para Empresas">
+                <a href="#" class="lista-rodapé__link">Alura Para Empresas</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-eduOnline/AluraLATAM.png" alt="Logo da Alura LATAM">
+                <a href="#" class="lista-rodapé__link">Alura LATAM</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-eduOnline/AluraStart.png" alt="Logo da Alura Start">
+                <a href="#" class="lista-rodapé__link">Alura Start</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-eduOnline/MusicDot.png" alt="Logo da MusicDot">
+                <a href="#" class="lista-rodapé__link">MusicDot</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-eduOnline/AluraLingua.png" alt="Logo da Alura Língua">
+                <a href="#" class="lista-rodapé__link">Alura Língua</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-eduOnline/PM3.png" alt="Logo da PM3">
+                <a href="#" class="lista-rodapé__link">PM3</a>
+            </li>
+        </ul>
+
+        <ul class="lista-rodapé">
+            <li class="lista-rodapé__titulo">Comunidade</li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-comunidade/HipstersTech.png" alt="Logo da HipstersTech">
+                <a href="#" class="lista-rodapé__link">Hipsters ponto Tech</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-comunidade/ScubaDev.png" alt="Logo da ScubaDev">
+                <a href="#" class="lista-rodapé__link">Scuba Dev</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-comunidade/LayersTech.png" alt="Logo da LayersTech">
+                <a href="#" class="lista-rodapé__link">Layers ponto Tech</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-comunidade/LikeABoss.png" alt="Logo da LikeABoss">
+                <a href="#" class="lista-rodapé__link">Like a Boss</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-comunidade/CarreiraSemFronteira.png" alt="Logo da CarreiraSemFronteira">
+                <a href="#" class="lista-rodapé__link">Carreira sem Fronteira</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-comunidade/HipstersJobs.png" alt="Logo da HipstersJobs">
+                <a href="#" class="lista-rodapé__link">Hipsters ponto Jobs</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="icones-rodapé-comunidade/GUJ.png" alt="Logo da GUJ">
+                <a href="#" class="lista-rodapé__link">GUJ</a>
+            </li>
+        </ul>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
