@@ -1,5 +1,6 @@
 .cabeçalho {
-
+    display: flex;
+    justify-content: space-between;
     background-image: var(--azul-menu);
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.596);
     
@@ -17,8 +18,7 @@
     justify-content: space-around;
     align-items: end;
 
-    height: 55px;
+    width: 50%;
+
     padding: 0.5em;
-
 }
-
