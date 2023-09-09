@@ -1,0 +1,39 @@
+body{
+    background-color: #000000;
+    color: #F6F6F6;
+    font-family: 'Montserrat';
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+strong{
+    color: #22D4FD;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 50%;
+}
+
+.botão {
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+
+    color: black;
+    background-color: #22D4FD;
+    
+    
+    border: 1px solid black;
+    border-radius: 15px;
+
+    width: 15%;
+    padding: 1rem;
+}
