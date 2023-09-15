@@ -1,7 +1,6 @@
 .apresentação {
-    background-color: azure;
     font-family: var(--fonte-padrao);
-
+    
     display: grid;
     grid-template-areas: 
     "lateral quemsomos"
@@ -12,15 +11,6 @@ h2 {
     text-align: center;
     color: #000000c9;
     margin: 0.5em 0;
-}
-
-.apresentação__container-texto {
-    margin-bottom: 2em;
-    font-weight: 500;
-}
-
-.apresentação__container-titulo {
-    color: var(--preto);
 }
 
 .apresentação__container {
