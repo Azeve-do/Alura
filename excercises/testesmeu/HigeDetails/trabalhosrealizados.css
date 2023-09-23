@@ -4,12 +4,6 @@
     width: 200px;
     height: 400px;
     overflow: hidden;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
 }
 
 .container-titulo__trabalhos {
@@ -61,7 +55,6 @@
 #slide3:checked ~ .s1 {
     margin-left: -78%;
 }
-
 
 input {
     display: none;
