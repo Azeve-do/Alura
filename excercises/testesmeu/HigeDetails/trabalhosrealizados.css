@@ -3,14 +3,57 @@
     justify-content: center;
     align-items: center;
 
-    flex-flow: column nowrap;
-    margin-top: 1rem;
+    width: 100%;
+    height: 600px;
+
+    gap: 1rem;
+
+
 }
 
-.img {
-    height: 400px;
-    width: 200px;
+.container-imagens {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+
 }
+
+.imagem {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+
+    border-radius: 10px;
+
+}
+
+.imagem2 {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+
+    border-radius: 10px;
+    
+}
+
+.on {
+    opacity: 1;
+}
+
+.on2 {
+    opacity: 1;
+}
+
+#prev-button, #next-button, #prev-button2, #next-button2 {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 
 .container-titulo__trabalhos {
     background-color:  var(--subtitulos);
