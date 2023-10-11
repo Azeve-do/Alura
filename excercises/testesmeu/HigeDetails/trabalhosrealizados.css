@@ -1,6 +1,6 @@
 .trabalhos__container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     width: 100%;
@@ -8,6 +8,7 @@
 
     gap: 1rem;
 
+    background-color: var(--trabalhosrealizados)
 
 }
 
@@ -28,6 +29,7 @@
     width: 100%;
 
     border-radius: 10px;
+    border: 1px solid white;
 
 }
 
@@ -38,6 +40,8 @@
 
     border-radius: 10px;
     
+    border: 1px solid white;
+
 }
 
 .on {
@@ -54,12 +58,26 @@
     cursor: pointer;
 }
 
-
 .container-titulo__trabalhos {
-    background-color:  var(--subtitulos);
-    width: 50%;
+    background-color: var(--trabalhosrealizados);
+
+    font-size: 5rem;
+
+
+    width: 100%;
     margin: auto;
 
-    box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.452);
+    /* box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.452); */
+}
 
+
+.container__descricao-trabalhosrealizados {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+
+}
+
+.texto-trabalhos {
+    width: 350px;
 }

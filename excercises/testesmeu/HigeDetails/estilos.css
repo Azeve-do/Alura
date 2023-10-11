@@ -11,11 +11,12 @@
 
 :root {
     --preto: #000000;
+    --cor-titulos: rgb(83, 130, 218); 
     --fonte-secundaria: "Josefin Sans";
     --fonte-padrao: "Poppins";
     --fundo-principal: azure;
     --branco: #ffffff;
-    --subtitulos: rgb(184, 242, 250);
+    --trabalhosrealizados: rgb(163, 211, 230);
     --azul-menu: linear-gradient(to right, #2433c2c9, #152686);
 }
 
@@ -34,9 +35,9 @@ body {
 }
 
 .container-titulo {
-    color: var(--preto);
+    color: var(--cor-titulos);
     font-family: var(--fonte-padrao);
-    font-size: 1.3rem;
+    font-size: 1.9rem;
 }
 
 .container-texto {
