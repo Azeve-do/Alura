@@ -1,4 +1,4 @@
-const precoLivros = [
+const precosLivros = [
     {
         titulo: "JavaScript",
         preco: 25
@@ -28,6 +28,7 @@ const precoLivros = [
         titulo: "PYTHON",
         preco: 20
     }
-]
 
-module.export = precoLivros;
+];
+
+module.exports = precosLivros;
