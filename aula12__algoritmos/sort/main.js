@@ -1,16 +1,18 @@
 const livros = require('../valorMenorLivros/precosLivros');
 const menorValor = require('../valorMenorLivros/menorValor');
 
-for (let atual = 0; atual < livros.length; atual++) {
+livros.forEach((_, indice) => {
 
-    let menor = menorValor(livros, atual)
+    let menor = menorValor(livros, indice)
     
     
-    let livroAtual = livros[atual];
+    let livroAtual = livros[indice];
     let livroMenorPreco = livroAtual[menor];
 
-    livros[atual] = livroMenorPreco
+    livros[indice] = livroMenorPreco
     livros[menor] = livroAtual
-}
+
+})
+    
 
 console.log(livros)
