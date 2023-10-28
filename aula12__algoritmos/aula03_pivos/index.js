@@ -21,3 +21,19 @@ function trocaLugar(array, de, para) {
     array[para] = elem1
     array[de] = elem2
 }
+
+function divideNoPivo(array) {
+    let pivo = array[Math.floor(array.length / 2)];
+    encontraMenores(pivo, array);
+    let menoresValores = 0;
+
+    for(let analisando = 0; analisando < array.length; analisando++) {
+        let atual = array[analisando];
+        if(atual.preco < pivo.preco && atual !== pivo) {
+            trocaLugar(array, analisando, menoresValores)
+            menoresValores++
+        }
+    }
+
+    return array
+}
