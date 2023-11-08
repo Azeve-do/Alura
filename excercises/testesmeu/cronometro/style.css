@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color:  #000000c9;
+    font: normal 16px Arial;
+    color: white;
+}
+
+.cronometro {
+    border: 1px solid white;
+    width: 400px;
+    height: 300px;
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+input {
+    margin-bottom: 25px;
+
+    color: white;
+    background-color: darkslateblue;
+
+    width: 50%;
+    height: 30px;
+
+    border: none;
+    border-radius: 10px 0px;
+
+    cursor: pointer;
+}
+
+input:active {
+    transition: 0.2s;
+    transform: scale(0.9);
+}
