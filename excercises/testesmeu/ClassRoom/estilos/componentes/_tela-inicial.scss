@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content__jogar {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+
+    font: normal 45px Bellota;
+    color: #FFF;
+    -webkit-text-stroke-color: rgba(0, 82, 242, 1);
+    -webkit-text-stroke-width: 1px;
+}
+
+.botao {
+    width: 356.636px;
+    padding: 0.3em;
+    border-radius: 41px;
+    border: 7px solid var(--Borda-branca, #FFF);
+    
+    font: normal 38px Bellota;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    
+    background: var(--botao-tela-inicio, #EFAC6E);
+    color: black;
+    -webkit-text-stroke-color: rgb(16, 26, 163);
+}
