@@ -79,16 +79,17 @@ body {
 }
 
 .opçoes {
+  width: 23em;
   padding-left: 0;
-  list-style-type: none;
   margin-top: 20px;
+  list-style-type: none;
 }
 
 .botao__opçoes {
-  padding: 0.3em 25%;
-  border-radius: 12px;
-  border: 7px solid var(--Borda-branca, #FFF);
-  font: normal 35px Bellota;
+  padding: 0 10%;
+  border-radius: 0.3em;
+  border: solid 0.2em var(--Borda-branca, #FFF);
+  font: normal 1.5em Bellota;
   text-align: center;
   font-weight: 700;
   text-decoration: none;
@@ -100,4 +101,29 @@ body {
 
 .checklist {
   margin-top: 3em;
+}
+
+.continue__button {
+  font: normal 1.5em Bellota;
+  width: 65%;
+  padding: 0.5em;
+  margin-top: 5em;
+  background-color: transparent;
+  border: solid 0.2em white;
+  border-radius: 0.5em;
+  -webkit-text-stroke-color: rgb(16, 26, 163);
+  -webkit-text-stroke-width: 1px;
+}
+
+.radio-box {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: solid 1px white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.radio-box:checked {
+  background-color: #3e59f0;
 }/*# sourceMappingURL=style.css.map */
