@@ -5,6 +5,7 @@ body {
 .content__questoes-enunciado {
     width: 356.636px;
     padding: 0.2em;
+
     border-radius: 15px;
     border: 7px solid $cor-branca;
     
@@ -15,6 +16,7 @@ body {
     
     background: $cor-secundaria;
     color: $cor-preta;
+
     -webkit-text-stroke-color: $borda-letras__botoes;
     -webkit-text-stroke-width: 1px;
 }
@@ -38,8 +40,8 @@ body {
 }
 
 .botao__opçoes { 
-
     padding: 0 10%;
+
     border-radius: 0.3em;
     border: solid 0.2em $cor-branca;
     
@@ -50,16 +52,19 @@ body {
     
     background: $cor-secundaria;
     color: $cor-preta;
+
     -webkit-text-stroke-color: $borda-letras__botoes;
     -webkit-text-stroke-width: 1px;
-
 }
 
 .radio-box {
     -webkit-appearance: none;
+
     background-color: transparent;
+
     border: solid 1px $cor-branca;
     border-radius: 50%;
+
     width: 20px;
     height: 20px;
 }
@@ -70,15 +75,13 @@ body {
 
 .continue__button {
     font: normal 1.5em $font-principal;
-
     text-decoration: none;
     text-align: center;
 
     width: 65%;
     padding: 0.5em;
-
     margin-top: 5em;
-    
+
     background-color: transparent;
 
     border: solid 0.2em $cor-branca;
