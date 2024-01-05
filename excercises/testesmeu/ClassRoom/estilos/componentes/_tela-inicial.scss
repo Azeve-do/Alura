@@ -10,9 +10,12 @@ body {
     align-items: center;
     flex-flow: column;
 
-    font: normal 40px Bellota;
-    color: #FFF;
-    -webkit-text-stroke-color: rgba(0, 82, 242, 1);
+}
+
+.content__jogar-titulo {
+    font: normal 60px $font-principal;
+    color: $cor-branca;
+    -webkit-text-stroke-color: $borda-letras__titulo;
     -webkit-text-stroke-width: 1px;
 }
 
@@ -20,14 +23,15 @@ body {
     width: 356.636px;
     padding: 0.3em;
     border-radius: 41px;
-    border: 7px solid var(--Borda-branca, #FFF);
+    border: 7px solid $cor-branca;
     
-    font: normal 30px Bellota;
+    font: normal 30px $font-principal;
     text-align: center;
     font-weight: 700;
     text-decoration: none;
     
-    background: var(--botao-tela-inicio, #EFAC6E);
-    color: black;
-    -webkit-text-stroke-color: rgb(16, 26, 163);
+    background: $cor-secundaria;
+    color: $cor-preta;
+    -webkit-text-stroke-color: $borda-letras__botoes;
+    -webkit-text-stroke-width: 1px;
 }

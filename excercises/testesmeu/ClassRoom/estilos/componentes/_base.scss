@@ -1,4 +1,31 @@
 @import './breakpoints';
+
+// ----------- VARIÁVEIS -------------
+
+// ----------- CORES ------------
+
+$cor-primaria: #A784F2;
+$cor-secundaria: #EFAC6E;
+$cor-branca: #FFF;
+$cor-preta: #000000;
+
+$borda-letras__titulo: #0052f2;
+$borda-letras__botoes: #101aa3;
+$borda-letras__acerto-ou-erro: #fff;
+
+$hover-e-checked: #465ee7;
+
+$imagem-de-acerto: #62D467;
+$imagem-de-erro: #D46262;
+
+
+// ----------- FONTES -----------
+
+$font-principal: Bellota;
+$font-acerto-e-erro: Fugaz One;
+
+// ----------- FIM -------------
+
 html, body {
     height: 100vh;
     width: 100vw;
@@ -7,5 +34,5 @@ html, body {
 }
 
 body {
-    background-color: #A784F2;
+    background-color: $cor-primaria;
 }

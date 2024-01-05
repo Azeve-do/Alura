@@ -2,30 +2,30 @@ body {
     flex-flow: column;
 }
 
-.alternativa {
+.content__questoes-enunciado {
+    width: 356.636px;
+    padding: 0.2em;
+    border-radius: 15px;
+    border: 7px solid $cor-branca;
+    
+    font: normal 30px $font-principal;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    
+    background: $cor-secundaria;
+    color: $cor-preta;
+    -webkit-text-stroke-color: $borda-letras__botoes;
+    -webkit-text-stroke-width: 1px;
+}
+
+.content__questoes-alternativas {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
 }
 
-.questão-da-rodada {
-    width: 356.636px;
-    padding: 0.2em;
-    border-radius: 15px;
-    border: 7px solid var(--Borda-branca, #FFF);
-    
-    font: normal 30px Bellota;
-    text-align: center;
-    font-weight: 700;
-    text-decoration: none;
-    
-    background: var(--botao-tela-inicio, #EFAC6E);
-    color: black;
-    -webkit-text-stroke-color: rgb(16, 26, 163);
-    -webkit-text-stroke-width: 1px;
-}
-
-.opçoes {
+.alternativas-listaDeOpçoes {
     width: 23em;
     padding-left: 0;
     margin-top: 20px;
@@ -33,30 +33,43 @@ body {
     list-style-type: none;
 }
 
+.alternativa {
+    margin-top: 3em;
+}
+
 .botao__opçoes { 
 
     padding: 0 10%;
     border-radius: 0.3em;
-    border: solid 0.2em var(--Borda-branca, #FFF);
+    border: solid 0.2em $cor-branca;
     
-    font: normal 1.5em Bellota;
+    font: normal 1.5em $font-principal;
     text-align: center;
     font-weight: 700;
     text-decoration: none;
     
-    background: var(--botao-tela-inicio, #EFAC6E);
-    color: black;
-    -webkit-text-stroke-color: rgb(16, 26, 163);
+    background: $cor-secundaria;
+    color: $cor-preta;
+    -webkit-text-stroke-color: $borda-letras__botoes;
     -webkit-text-stroke-width: 1px;
 
 }
 
-.checklist {
-    margin-top: 3em;
+.radio-box {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: solid 1px $cor-branca;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.radio-box:checked {
+    background-color: $hover-e-checked;
 }
 
 .continue__button {
-    font: normal 1.5em Bellota;
+    font: normal 1.5em $font-principal;
 
     text-decoration: none;
     text-align: center;
@@ -68,28 +81,15 @@ body {
     
     background-color: transparent;
 
-    border: solid 0.2em white;
+    border: solid 0.2em $cor-branca;
     border-radius: 0.5em;
 
-    -webkit-text-stroke-color: rgb(16, 26, 163);
+    -webkit-text-stroke-color: $borda-letras__botoes;
     -webkit-text-stroke-width: 1px;
 
 }
 
 .continue__button:hover, .continue__button:active {
-    color: white;
-    background-color: #465ee7;
-}
-
-.radio-box {
-    -webkit-appearance: none;
-    background-color: transparent;
-    border: solid 1px white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-}
-
-.radio-box:checked {
-    background-color: #465ee7;
+    color: $cor-branca;
+    background-color: $hover-e-checked;
 }
