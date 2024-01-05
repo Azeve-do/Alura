@@ -20,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   flex-flow: column;
-  font: normal 45px Bellota;
+  font: normal 40px Bellota;
   color: #FFF;
   -webkit-text-stroke-color: rgb(0, 82, 242);
   -webkit-text-stroke-width: 1px;
@@ -31,7 +31,7 @@ body {
   padding: 0.3em;
   border-radius: 41px;
   border: 7px solid var(--Borda-branca, #FFF);
-  font: normal 38px Bellota;
+  font: normal 30px Bellota;
   text-align: center;
   font-weight: 700;
   text-decoration: none;
@@ -105,6 +105,8 @@ body {
 
 .continue__button {
   font: normal 1.5em Bellota;
+  text-decoration: none;
+  text-align: center;
   width: 65%;
   padding: 0.5em;
   margin-top: 5em;
@@ -113,6 +115,11 @@ body {
   border-radius: 0.5em;
   -webkit-text-stroke-color: rgb(16, 26, 163);
   -webkit-text-stroke-width: 1px;
+}
+
+.continue__button:hover, .continue__button:active {
+  color: white;
+  background-color: #465ee7;
 }
 
 .radio-box {
@@ -125,5 +132,40 @@ body {
 }
 
 .radio-box:checked {
-  background-color: #3e59f0;
+  background-color: #465ee7;
+}
+
+.texto-acertou-ou-errou {
+  border: 6px solid white;
+  border-radius: 15px;
+  height: 65px;
+  width: 280px;
+  padding: 0.3em 1em;
+  font: normal 3em Fugaz One;
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  background-color: #62D467;
+}
+
+.Soluçao {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 4em;
+}
+
+.opçoes-apos-rodada {
+  display: flex;
+  flex-flow: column;
+  gap: 3em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(16, 26, 163);
+}
+
+.botao-prosseguir {
+  border-radius: 15px;
+  padding: 0.5em;
 }/*# sourceMappingURL=style.css.map */

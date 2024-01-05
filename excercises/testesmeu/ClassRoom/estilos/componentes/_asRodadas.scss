@@ -58,6 +58,9 @@ body {
 .continue__button {
     font: normal 1.5em Bellota;
 
+    text-decoration: none;
+    text-align: center;
+
     width: 65%;
     padding: 0.5em;
 
@@ -73,6 +76,11 @@ body {
 
 }
 
+.continue__button:hover, .continue__button:active {
+    color: white;
+    background-color: #465ee7;
+}
+
 .radio-box {
     -webkit-appearance: none;
     background-color: transparent;
@@ -83,5 +91,5 @@ body {
 }
 
 .radio-box:checked {
-    background-color: #3e59f0;
+    background-color: #465ee7;
 }

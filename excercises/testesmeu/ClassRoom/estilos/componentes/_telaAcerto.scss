@@ -1,0 +1,40 @@
+.texto-acertou-ou-errou {
+    border: 6px solid white;
+    border-radius: 15px;
+    
+    height: 65px;
+    width: 280px;
+    padding: 0.3em 1em;
+
+    font: normal 3em Fugaz One;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+
+    background-color: #62D467;
+}
+
+.Soluçao {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-flow: column;
+    gap: 4em;
+}
+
+.opçoes-apos-rodada {
+    display: flex;
+    flex-flow: column;
+    gap: 3em;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(16, 26, 163);
+}
+
+.botao-prosseguir {
+    border-radius: 15px;
+    padding: 0.5em;
+}
