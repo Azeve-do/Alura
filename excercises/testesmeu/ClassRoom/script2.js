@@ -1,5 +1,3 @@
-
-
 var listaProfessores = [
     {nome: 'Luciana Cassia', turma: '1º Ano A' & '1º Ano G'},
     {nome: 'Jussara', turma: '1º Ano B'},
@@ -29,11 +27,17 @@ var listaProfessores = [
     
 ]
 
+const listaSalas = [
+"1º Ano A", 
+"1º Ano B", 
+"1º Ano C", "1º Ano D", "1º Ano E", "1º Ano F", "1º Ano G", "2º Ano A", "2º Ano B", "2º Ano C", "2º Ano D", "2º Ano E", "2º Ano F", "2º Ano G", "3º Ano A", "3º Ano B", "3º Ano C", "3º Ano D", "3º Ano E", "3º Ano F", "4º Ano A", "4º Ano B", "4º Ano C", "4º Ano D", "4º Ano E", "5º Ano A", "5º Ano B","5º Ano C", "5º Ano D", "5º Ano E"]
+
 
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
-const professorAleatorio = listaProfessores[professorAleatorioIndex]
+const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 
 function ConsoleLog (element, novoTexto) {
     element.innerText = novoTexto
 
 }
+
