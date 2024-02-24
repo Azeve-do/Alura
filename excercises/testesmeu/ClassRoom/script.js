@@ -4,9 +4,13 @@ const tresR = document.getElementById('3r')
 const rSemLimites = document.getElementById('semL')
 const questaoProf = document.getElementById('professor')
 
+
+
 var quantidadeDeRodadas = 0
 
 
 dezR.addEventListener('click', ()=> {
     window.location.href = "Asrodadas.html"
 })
+
+
