@@ -73,13 +73,11 @@ const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 
 questaoProf.innerText = professorAleatorio
 
-
 window.onload = function alternativasAleatorias () {
-    var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1)) + 1
     i = 1
-
+    
     while (i <= 4) {
-
+        
         var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
         var opçoesAleatorio = listaSalas[opçoesIndex]
 
@@ -90,8 +88,6 @@ window.onload = function alternativasAleatorias () {
 
     const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
 
-    console.log(alternativasUnicas)
-
     while (alternativasUnicas.length < 4){
 
         var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
@@ -99,17 +95,27 @@ window.onload = function alternativasAleatorias () {
 
         alternativasUnicas.push(opçoesAleatorio)
     }
-
-    console.log(alternativasUnicas)
-   
-    alternativa.innerText = alternativasUnicas[0]
-    alternativaDois.innerText = alternativasUnicas[1]
-    alternativaTres.innerText = alternativasUnicas[2]
-    alternativaQuatro.innerText = alternativasUnicas[3]
-
+    
     listaProfessores.forEach((professor) => {
+        var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1)) + 1
         if(professor.nome == professorAleatorio) {
-            console.log('ok')
+            alternativasUnicas.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
+            console.log(alternativasUnicas)
+            console.log(professorAleatorio)
+            console.log(numeroAleatorioEntreQuatro)
         }
     })
+
+
+
+   /*  alternativa.innerText = alternativasUnicas[0]
+    alternativaDois.innerText = alternativasUnicas[1]
+    alternativaTres.innerText = alternativasUnicas[2] */
+
+/*     var respostaCorreta = alternativasUnicas.splice(0, numeroAleatorioEntreQuatro, listaProfessores.turma)
+ */
+    
+
+    /* console.log(respostaCorreta) */
 }
+
