@@ -64,6 +64,7 @@ const listaSalas = [
     "5º Ano E",
 ]
 
+
 var listaEscolhasAleatorias = []
 
 const alternativa = document.getElementById('alternativa1')
@@ -71,8 +72,10 @@ const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
 const alternativaQuatro = document.getElementById('alternativa4')
 
+
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
+
 
 questaoProf.innerText = professorAleatorio
 
@@ -99,13 +102,11 @@ window.onload = function alternativasAleatorias () {
     }
     
     listaProfessores.forEach((professor) => {
-
         var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
 
         if(professor.nome == professorAleatorio) {
             alternativasUnicas.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
         }
-
     })
 
     alternativa.innerText = alternativasUnicas[0]
