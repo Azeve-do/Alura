@@ -64,6 +64,8 @@ const listaSalas = [
     "5º Ano E",
 ]
 
+var idRodadas = document.getElementById('identificacao-rodadas');
+var continuar = document.getElementById('botao-continue')
 
 var listaEscolhasAleatorias = []
 
@@ -72,46 +74,63 @@ const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
 const alternativaQuatro = document.getElementById('alternativa4')
 
-
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 
 
-questaoProf.innerText = professorAleatorio
+if (DezRodadas) {
+    quantidadeDeRodadas + 1
 
-window.onload = function alternativasAleatorias () { 
+    while (quantidadeDeRodadas < 10) { /* FOR */
 
-    for (i = 1; i <= 3; i++) {
+        questaoProf.innerText = professorAleatorio
 
-        var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
-        var opçoesAleatorio = listaSalas[opçoesIndex]
+        for (i = 1; i <= 3; i++) {
 
-        listaEscolhasAleatorias.push(opçoesAleatorio)
-
-        i ++
-    } 
-
-    const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
-
-    while (alternativasUnicas.length < 3){
-
-        var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
-        var opçoesAleatorio = listaSalas[opçoesIndex]
-        alternativasUnicas.push(opçoesAleatorio)
-
-    }
+            var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
+            var opçoesAleatorio = listaSalas[opçoesIndex]
     
-    listaProfessores.forEach((professor) => {
-        var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
-
-        if(professor.nome == professorAleatorio) {
-            alternativasUnicas.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
+            listaEscolhasAleatorias.push(opçoesAleatorio)
+    
+            i ++
+        } 
+    
+        const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
+    
+        while (alternativasUnicas.length < 3){
+    
+            var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
+            var opçoesAleatorio = listaSalas[opçoesIndex]
+            alternativasUnicas.push(opçoesAleatorio)
+    
         }
-    })
-
-    alternativa.innerText = alternativasUnicas[0]
-    alternativaDois.innerText = alternativasUnicas[1]
-    alternativaTres.innerText = alternativasUnicas[2]
-    alternativaQuatro.innerText = alternativasUnicas[3] 
+        
+        listaProfessores.forEach((professor) => {
+            var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
     
+            if(professor.nome == professorAleatorio) {
+                alternativasUnicas.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
+            }
+        })
+    
+        alternativa.innerText = alternativasUnicas[0]
+        alternativaDois.innerText = alternativasUnicas[1]
+        alternativaTres.innerText = alternativasUnicas[2]
+        alternativaQuatro.innerText = alternativasUnicas[3]  
+
+        // REFRESH ONDE VÉI 
+
+        continuar.addEventListener('click', () => {
+            quantidadeDeRodadas + 1
+
+            location.reload()
+
+
+
+        })
+        
+    }
+
+    console.log(quantidadeDeRodadas)
+
 }
