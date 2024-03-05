@@ -81,56 +81,47 @@ const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 if (DezRodadas) {
     quantidadeDeRodadas + 1
 
-    while (quantidadeDeRodadas < 10) { /* FOR */
+     /* FOR */
 
-        questaoProf.innerText = professorAleatorio
+    questaoProf.innerText = professorAleatorio
 
-        for (i = 1; i <= 3; i++) {
+    var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
+    var opçoesAleatorio = listaSalas[opçoesIndex]
 
-            var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
-            var opçoesAleatorio = listaSalas[opçoesIndex]
+    listaEscolhasAleatorias.push(opçoesAleatorio)
     
-            listaEscolhasAleatorias.push(opçoesAleatorio)
-    
-            i ++
-        } 
-    
-        const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
-    
-        while (alternativasUnicas.length < 3){
-    
-            var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
-            var opçoesAleatorio = listaSalas[opçoesIndex]
-            alternativasUnicas.push(opçoesAleatorio)
-    
-        }
-        
-        listaProfessores.forEach((professor) => {
-            var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
-    
-            if(professor.nome == professorAleatorio) {
-                alternativasUnicas.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
-            }
-        })
-    
-        alternativa.innerText = alternativasUnicas[0]
-        alternativaDois.innerText = alternativasUnicas[1]
-        alternativaTres.innerText = alternativasUnicas[2]
-        alternativaQuatro.innerText = alternativasUnicas[3]  
 
-        // REFRESH ONDE VÉI 
+    const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
 
-        continuar.addEventListener('click', () => {
-            quantidadeDeRodadas + 1
+    while (alternativasUnicas.length < 3){
 
-            location.reload()
+        var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
+        var opçoesAleatorio = listaSalas[opçoesIndex]
+        alternativasUnicas.push(opçoesAleatorio)
 
-
-
-        })
-        
     }
+    
+    listaProfessores.forEach((professor) => {
+        var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
 
-    console.log(quantidadeDeRodadas)
+        if(professor.nome == professorAleatorio) {
+            alternativasUnicas.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
+        }
+    })
+
+    alternativa.innerText = alternativasUnicas[0]
+    alternativaDois.innerText = alternativasUnicas[1]
+    alternativaTres.innerText = alternativasUnicas[2]
+    alternativaQuatro.innerText = alternativasUnicas[3]  
+
+    // REFRESH ONDE VÉI 
+
+    continuar.addEventListener('click', () => {
+
+        console.log('teste'
+        )
+
+    })
+
 
 }

@@ -14,10 +14,10 @@
 
         <p class="content__questoes-enunciado" id="professor"></p>
 
-        <div class="content__questoes-alternativas">
+        <form class="content__questoes-alternativas">
             <ul class="alternativas-listaDeOpçoes">
                 <li class="alternativa">
-                    <input type="radio" id="iprimeira" name="resposta" class="radio-box">
+                    <input type="radio" id="iprimeira" name="resposta" class="radio-box" value="ASD">
                     <label for="iprimeira" class="botao__opçoes" id="alternativa1"></label>
                 </li>
                 <li class="alternativa">
@@ -33,13 +33,16 @@
                     <label for="iquarta" class="botao__opçoes" id="alternativa4"></label></label>
                 </li>
             </ul>
-        </div>
+
+            <input type="submit" value="CONTINUAR" class="continue__button" id="botao-continue">
+
+        </form>
 
 
     </section>
 
-    <button class="continue__button" id="botao-continue">CONTINUAR</button>
-
+<!--     <button class="continue__button" id="botao-continue">CONTINUAR</button>
+ -->
     <script src="script.js"></script>
     <script src="script2.js"></script>
 
