@@ -67,12 +67,21 @@ const listaSalas = [
 var idRodadas = document.getElementById('identificacao-rodadas');
 var continuar = document.getElementById('botao-continue')
 
-var listaEscolhasAleatorias = []
+var listaEscolhasAleatorias = [] 
 
 const alternativa = document.getElementById('alternativa1')
 const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
 const alternativaQuatro = document.getElementById('alternativa4')
+
+
+const formulario = document.getElementById('form')
+var radioBtns = document.querySelectorAll("input[name='resposta']")
+
+const valorInput = document.getElementById("iprimeira")
+const valorInputDois = document.getElementById("isegunda")
+const valorInputTres = document.getElementById("iterceira")
+const valorInputQuatro = document.getElementById("iquarta")
 
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
@@ -112,16 +121,26 @@ if (DezRodadas) {
     alternativa.innerText = alternativasUnicas[0]
     alternativaDois.innerText = alternativasUnicas[1]
     alternativaTres.innerText = alternativasUnicas[2]
-    alternativaQuatro.innerText = alternativasUnicas[3]  
+    alternativaQuatro.innerText = alternativasUnicas[3]
 
-    // REFRESH ONDE VÉI 
+    valorInput.value = alternativasUnicas[0]
+    valorInputDois.value = alternativasUnicas[1]
+    valorInputTres.value = alternativasUnicas[2]
+    valorInputQuatro.value = alternativasUnicas[3] 
 
-    continuar.addEventListener('click', () => {
 
-        console.log('teste'
-        )
+    formulario.addEventListener('submit', (event) => {
+        var selected = document.querySelector("input[name='resposta']:checked").value;  
 
-    })
-
+        
+        listaProfessores.forEach((professor) => {
+            if(professor.nome == professorAleatorio) {
+                if(professor.turma == selected) {
+                    console.log('testei')
+                }
+            }
+        })
+    }) 
 
 }
+
