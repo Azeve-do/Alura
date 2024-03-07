@@ -4,7 +4,6 @@ const tresR = document.getElementById('3r')
 const rSemLimites = document.getElementById('semL')
 const questaoProf = document.getElementById('professor')
 
-var quantidadeDeRodadas = 0
 
 function DezRodadas () {
     location.href = "Asrodadas.html"

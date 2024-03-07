@@ -86,11 +86,9 @@ const valorInputQuatro = document.getElementById("iquarta")
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 
+var quantidadeDeRodadas = 1
 
 if (DezRodadas) {
-    quantidadeDeRodadas + 1
-
-     /* FOR */
 
     questaoProf.innerText = professorAleatorio
 
@@ -128,19 +126,42 @@ if (DezRodadas) {
     valorInputTres.value = alternativasUnicas[2]
     valorInputQuatro.value = alternativasUnicas[3] 
 
-
+    
     formulario.addEventListener('submit', (event) => {
-        var selected = document.querySelector("input[name='resposta']:checked").value;  
+        event.preventDefault()
+
+        var selected = document.querySelector("input[name='resposta']:checked").value;
+
+        quantidadeDeRodadas += 1
+        sessionStorage.setItem("Rodada", quantidadeDeRodadas)
+
+        var salvarRodadas = sessionStorage.getItem("Rodada")
+
+        if (salvarRodadas) {
+            idRodadas.innerText = `Rodada ${'0' + salvarRodadas}`
+
+        }
+
 
         
         listaProfessores.forEach((professor) => {
             if(professor.nome == professorAleatorio) {
                 if(professor.turma == selected) {
-                    console.log('testei')
+                    
+                    alert('vc acertou')
+                    location.reload()
+                    
+                }
+                
+                else {
+                    alert('eerrado rapaz')
+                    location.reload()
+                    
                 }
             }
         })
     }) 
+
 
 }
 
