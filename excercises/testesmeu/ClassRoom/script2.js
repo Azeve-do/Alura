@@ -90,6 +90,7 @@ var quantidadeDeRodadas = 1
 
 if (DezRodadas) {
 
+
     questaoProf.innerText = professorAleatorio
 
     var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
@@ -126,42 +127,44 @@ if (DezRodadas) {
     valorInputTres.value = alternativasUnicas[2]
     valorInputQuatro.value = alternativasUnicas[3] 
 
+   
     
     formulario.addEventListener('submit', (event) => {
+
+   
         event.preventDefault()
 
+        
         var selected = document.querySelector("input[name='resposta']:checked").value;
 
-        quantidadeDeRodadas += 1
-        sessionStorage.setItem("Rodada", quantidadeDeRodadas)
+        /* sessionStorage.setItem("Rodada", quantidadeDeRodadas)
 
         var salvarRodadas = sessionStorage.getItem("Rodada")
 
         if (salvarRodadas) {
             idRodadas.innerText = `Rodada ${'0' + salvarRodadas}`
 
-        }
+        } */
 
 
-        
         listaProfessores.forEach((professor) => {
             if(professor.nome == professorAleatorio) {
                 if(professor.turma == selected) {
                     
                     alert('vc acertou')
-                    location.reload()
                     
                 }
                 
                 else {
                     alert('eerrado rapaz')
-                    location.reload()
                     
                 }
             }
         })
-    }) 
-
+        
+        
+    }
+    )
 
 }
 
