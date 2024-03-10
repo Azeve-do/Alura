@@ -65,6 +65,7 @@ const listaSalas = [
 ]
 
 var idRodadas = document.getElementById('identificacao-rodadas');
+var salvarRodadas = sessionStorage.getItem('Rodada')
 var continuar = document.getElementById('botao-continue')
 
 var listaEscolhasAleatorias = [] 
@@ -89,6 +90,8 @@ const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 var quantidadeDeRodadas = 1
 
 if (DezRodadas) {
+
+    sessionStorage.setItem("Rodada", 'quantidadeDeRodadas')
 
 
     questaoProf.innerText = professorAleatorio
@@ -130,33 +133,32 @@ if (DezRodadas) {
    
     
     formulario.addEventListener('submit', (event) => {
+        let Rodadas = document.querySelector(".numero-de-rodada")
+        
 
-   
+
         event.preventDefault()
-
         
         var selected = document.querySelector("input[name='resposta']:checked").value;
 
-        /* sessionStorage.setItem("Rodada", quantidadeDeRodadas)
+        /* sessionStorage.setItem("Rodada", 'teste')
 
-        var salvarRodadas = sessionStorage.getItem("Rodada")
-
-        if (salvarRodadas) {
-            idRodadas.innerText = `Rodada ${'0' + salvarRodadas}`
-
+        
+        if(salvarRodadas) {
+            salvarRodadas = 'teste2'
+            idRodadas.innerText = salvarRodadas
+        } else {
+            idRodadas.innerText = `${salvarRodadas}`
         } */
-
 
         listaProfessores.forEach((professor) => {
             if(professor.nome == professorAleatorio) {
                 if(professor.turma == selected) {
                     
-                    alert('vc acertou')
-                    
-                }
+                   location.reload()
+                }  
                 
                 else {
-                    alert('eerrado rapaz')
                     
                 }
             }
@@ -166,5 +168,17 @@ if (DezRodadas) {
     }
     )
 
+    let continuarclick = localStorage.getItem('Rodadas')
+
+    if(quantidadeDeRodadas = 1) {
+        idRodadas.innerText = `${continuarclick}`
+    }
+
 }
+
+continuar.addEventListener('click', () => {
+    localStorage.setItem('Rodadas', quantidadeDeRodadas += 1)
+})
+
+
 
