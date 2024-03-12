@@ -91,9 +91,6 @@ var quantidadeDeRodadas = 1
 
 if (DezRodadas) {
 
-    sessionStorage.setItem("Rodada", 'quantidadeDeRodadas')
-
-
     questaoProf.innerText = professorAleatorio
 
     var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
@@ -130,55 +127,33 @@ if (DezRodadas) {
     valorInputTres.value = alternativasUnicas[2]
     valorInputQuatro.value = alternativasUnicas[3] 
 
-   
-    
+    var continuarclick = sessionStorage.getItem('Rodadas')
+
     formulario.addEventListener('submit', (event) => {
-        let Rodadas = document.querySelector(".numero-de-rodada")
-        
-
-
         event.preventDefault()
-        
+
+        sessionStorage.setItem('Rodadas', continuarclick)    
+
         var selected = document.querySelector("input[name='resposta']:checked").value;
-
-        /* sessionStorage.setItem("Rodada", 'teste')
-
-        
-        if(salvarRodadas) {
-            salvarRodadas = 'teste2'
-            idRodadas.innerText = salvarRodadas
-        } else {
-            idRodadas.innerText = `${salvarRodadas}`
-        } */
 
         listaProfessores.forEach((professor) => {
             if(professor.nome == professorAleatorio) {
                 if(professor.turma == selected) {
-                    
-                   location.reload()
+                    alert('acertou')
+                    location.reload()
                 }  
                 
                 else {
-                    
+                    location.reload()
                 }
             }
         })
-        
-        
-    }
-    )
 
-    let continuarclick = localStorage.getItem('Rodadas')
+    })
 
-    if(quantidadeDeRodadas = 1) {
-        idRodadas.innerText = `${continuarclick}`
-    }
+    idRodadas.innerText = `Rodada 0${continuarclick++}`
 
 }
-
-continuar.addEventListener('click', () => {
-    localStorage.setItem('Rodadas', quantidadeDeRodadas += 1)
-})
 
 
 
