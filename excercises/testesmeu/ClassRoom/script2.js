@@ -64,12 +64,9 @@ const listaSalas = [
     "5º Ano E",
 ]
 
-var idRodadas = document.getElementById('identificacao-rodadas');
-var salvarRodadas = sessionStorage.getItem('Rodada')
-var continuar = document.getElementById('botao-continue')
-
 var listaEscolhasAleatorias = [] 
 
+const idRodadas = document.getElementById('identificacao-rodadas');
 const alternativa = document.getElementById('alternativa1')
 const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
@@ -148,9 +145,14 @@ if (DezRodadas) {
                 }
             }
         })
-
+       
     })
 
+    while(continuarclick) {  
+        if (continuarclick == 5) {
+            location.href = 'páginaInicial.html'
+        }
+    }
     idRodadas.innerText = `Rodada 0${continuarclick++}`
 
 }
