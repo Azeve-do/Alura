@@ -87,6 +87,9 @@ const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 var quantidadeDeRodadas = 1
 
 if (DezRodadas) {
+    if(!continuarclick) {
+        idRodadas.innerText = 'Rodada 01'
+    }
 
     questaoProf.innerText = professorAleatorio
 
@@ -124,7 +127,6 @@ if (DezRodadas) {
     valorInputTres.value = alternativasUnicas[2]
     valorInputQuatro.value = alternativasUnicas[3] 
 
-    var continuarclick = sessionStorage.getItem('Rodadas')
 
     formulario.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -136,7 +138,6 @@ if (DezRodadas) {
         listaProfessores.forEach((professor) => {
             if(professor.nome == professorAleatorio) {
                 if(professor.turma == selected) {
-                    alert('acertou')
                     location.reload()
                 }  
                 
@@ -148,14 +149,12 @@ if (DezRodadas) {
        
     })
 
-    while(continuarclick) {  
-        if (continuarclick == 5) {
-            location.href = 'páginaInicial.html'
-        }
-    }
+    var continuarclick = sessionStorage.getItem('Rodadas')
+
     idRodadas.innerText = `Rodada 0${continuarclick++}`
 
+    if (continuarclick == 5) {
+        sessionStorage.removeItem('Rodadas')
+        window.open('páginaInicial.html', '_parent')
+    }
 }
-
-
-
