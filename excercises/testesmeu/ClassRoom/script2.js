@@ -72,9 +72,7 @@ const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
 const alternativaQuatro = document.getElementById('alternativa4')
 
-
 const formulario = document.getElementById('form')
-var radioBtns = document.querySelectorAll("input[name='resposta']")
 
 const valorInput = document.getElementById("iprimeira")
 const valorInputDois = document.getElementById("isegunda")
@@ -87,9 +85,6 @@ const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 var quantidadeDeRodadas = 1
 
 if (DezRodadas) {
-    if(!continuarclick) {
-        idRodadas.innerText = 'Rodada 01'
-    }
 
     questaoProf.innerText = professorAleatorio
 
@@ -127,34 +122,37 @@ if (DezRodadas) {
     valorInputTres.value = alternativasUnicas[2]
     valorInputQuatro.value = alternativasUnicas[3] 
 
+}
 
-    formulario.addEventListener('submit', (event) => {
-        event.preventDefault()
 
-        sessionStorage.setItem('Rodadas', continuarclick)    
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault()
 
-        var selected = document.querySelector("input[name='resposta']:checked").value;
+    sessionStorage.setItem('Rodadas', continuarclick)    
 
-        listaProfessores.forEach((professor) => {
-            if(professor.nome == professorAleatorio) {
-                if(professor.turma == selected) {
-                    location.reload()
-                }  
-                
-                else {
-                    location.reload()
-                }
+    var selected = document.querySelector("input[name='resposta']:checked").value;
+
+    listaProfessores.forEach((professor) => {
+        if(professor.nome == professorAleatorio) {
+            
+            if(professor.turma == selected) {
+                location.reload()
+            }  
+            
+            else {
+                location.reload()
             }
-        })
-       
+        }
     })
+    
 
-    var continuarclick = sessionStorage.getItem('Rodadas')
+})
 
-    idRodadas.innerText = `Rodada 0${continuarclick++}`
+var continuarclick = sessionStorage.getItem('Rodadas')
 
-    if (continuarclick == 5) {
-        sessionStorage.removeItem('Rodadas')
-        window.open('páginaInicial.html', '_parent')
-    }
+idRodadas.innerText = `${continuarclick++}`
+
+if (continuarclick > 5) {
+    sessionStorage.removeItem('Rodadas')
+    window.open('páginaInicial.html', '_parent')
 }
