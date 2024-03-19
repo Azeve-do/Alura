@@ -120,39 +120,34 @@ if (DezRodadas) {
     valorInput.value = alternativasUnicas[0]
     valorInputDois.value = alternativasUnicas[1]
     valorInputTres.value = alternativasUnicas[2]
-    valorInputQuatro.value = alternativasUnicas[3] 
+    valorInputQuatro.value = alternativasUnicas[3]
+
 
 }
 
 
 formulario.addEventListener('submit', (event) => {
     event.preventDefault()
-
-    sessionStorage.setItem('Rodadas', continuarclick)    
-
     var selected = document.querySelector("input[name='resposta']:checked").value;
 
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
-            
             if(professor.turma == selected) {
                 location.reload()
-            }  
-            
-            else {
+            } else { 
                 location.reload()
             }
         }
     })
     
-
+    if (selected) {
+        somarRodadas()
+    }
 })
 
-var continuarclick = sessionStorage.getItem('Rodadas')
+idRodadas.innerText = sessionStorage.getItem('Rodadas') || '1'
 
-idRodadas.innerText = `${continuarclick++}`
-
-if (continuarclick > 5) {
-    sessionStorage.removeItem('Rodadas')
-    window.open('páginaInicial.html', '_parent')
+function somarRodadas () {
+    idRodadas.innerHTML = parseInt(idRodadas.innerText) + 1;
+    var qtdRodadas = sessionStorage.setItem('Rodadas', idRodadas.innerText)
 }
