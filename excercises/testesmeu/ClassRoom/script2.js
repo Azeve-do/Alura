@@ -64,8 +64,6 @@ const listaSalas = [
     "5º Ano E",
 ]
 
-var listaEscolhasAleatorias = [] 
-
 const idRodadas = document.getElementById('identificacao-rodadas');
 const alternativa = document.getElementById('alternativa1')
 const alternativaDois = document.getElementById('alternativa2')
@@ -82,35 +80,44 @@ const valorInputQuatro = document.getElementById("iquarta")
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 
-var quantidadeDeRodadas = 1
 
 if (DezRodadas) {
 
     questaoProf.innerText = professorAleatorio
-
-    var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
-    var opçoesAleatorio = listaSalas[opçoesIndex]
-
-    listaEscolhasAleatorias.push(opçoesAleatorio)
     
+    const listaEscolhasAleatorias = []
 
-    const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
-
-    while (alternativasUnicas.length < 3){
+    while (listaEscolhasAleatorias.length < 3){
 
         var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
         var opçoesAleatorio = listaSalas[opçoesIndex]
-        alternativasUnicas.push(opçoesAleatorio)
+        listaEscolhasAleatorias.push(opçoesAleatorio)
 
     }
+
     
     listaProfessores.forEach((professor) => {
         var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
 
         if(professor.nome == professorAleatorio) {
-            alternativasUnicas.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
+            listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
         }
+
     })
+
+    const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
+
+    if (alternativasUnicas.length == 3) {
+        console.log('lengg3')
+        var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
+        var opçoesAleatorio = listaSalas[opçoesIndex]
+
+        lista
+        alternativasUnicas.push(opçoesAleatorio)
+    }
+
+    console.log(listaEscolhasAleatorias)
+    console.log(alternativasUnicas)
 
     alternativa.innerText = alternativasUnicas[0]
     alternativaDois.innerText = alternativasUnicas[1]
@@ -125,7 +132,6 @@ if (DezRodadas) {
 
 }
 
-
 formulario.addEventListener('submit', (event) => {
     event.preventDefault()
     var selected = document.querySelector("input[name='resposta']:checked").value;
@@ -133,6 +139,7 @@ formulario.addEventListener('submit', (event) => {
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
             if(professor.turma == selected) {
+                alert('acertou')
                 location.reload()
             } else { 
                 location.reload()
@@ -149,5 +156,12 @@ idRodadas.innerText = sessionStorage.getItem('Rodadas') || '1'
 
 function somarRodadas () {
     idRodadas.innerHTML = parseInt(idRodadas.innerText) + 1;
-    var qtdRodadas = sessionStorage.setItem('Rodadas', idRodadas.innerText)
+    sessionStorage.setItem('Rodadas', idRodadas.innerText)
+}
+
+var quantidadeDeRodadas = sessionStorage.getItem('Rodadas')
+
+if(quantidadeDeRodadas > 10) {
+    sessionStorage.removeItem('Rodadas')
+    window.open('páginaInicial.html', '_parent')
 }
