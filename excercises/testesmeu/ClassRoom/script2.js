@@ -1,3 +1,4 @@
+
 var listaProfessores = [
     {nome: 'Luciana Cassia', turma: '1º Ano A'},
     {nome: 'Luciana Cassia ', turma: '1º Ano G'},
@@ -64,6 +65,7 @@ const listaSalas = [
     "5º Ano E",
 ]
 
+
 const idRodadas = document.getElementById('identificacao-rodadas');
 const alternativa = document.getElementById('alternativa1')
 const alternativaDois = document.getElementById('alternativa2')
@@ -84,40 +86,48 @@ const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 if (DezRodadas) {
 
     questaoProf.innerText = professorAleatorio
-    
     const listaEscolhasAleatorias = []
 
-    while (listaEscolhasAleatorias.length < 3){
 
+    while (listaEscolhasAleatorias.length < 3){
         var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
         var opçoesAleatorio = listaSalas[opçoesIndex]
-        listaEscolhasAleatorias.push(opçoesAleatorio)
 
+        listaEscolhasAleatorias.push(opçoesAleatorio)
     }
 
-    
+
+    console.log(listaEscolhasAleatorias)
+
+
     listaProfessores.forEach((professor) => {
         var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
 
         if(professor.nome == professorAleatorio) {
-            listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
-        }
-
+                listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
+            }
     })
+            
+
+    console.log(listaEscolhasAleatorias)
+
 
     const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
 
     if (alternativasUnicas.length == 3) {
         console.log('lengg3')
+
         var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
         var opçoesAleatorio = listaSalas[opçoesIndex]
+        console.log(opçoesAleatorio)
 
-        lista
         alternativasUnicas.push(opçoesAleatorio)
+        
     }
 
-    console.log(listaEscolhasAleatorias)
+
     console.log(alternativasUnicas)
+
 
     alternativa.innerText = alternativasUnicas[0]
     alternativaDois.innerText = alternativasUnicas[1]
@@ -139,7 +149,7 @@ formulario.addEventListener('submit', (event) => {
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
             if(professor.turma == selected) {
-                alert('acertou')
+                /* alert('acertou') */
                 location.reload()
             } else { 
                 location.reload()
@@ -161,7 +171,7 @@ function somarRodadas () {
 
 var quantidadeDeRodadas = sessionStorage.getItem('Rodadas')
 
-if(quantidadeDeRodadas > 10) {
+/* if(quantidadeDeRodadas > 10) {
     sessionStorage.removeItem('Rodadas')
     window.open('páginaInicial.html', '_parent')
-}
+} */
