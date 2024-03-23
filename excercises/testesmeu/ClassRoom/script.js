@@ -5,8 +5,24 @@ const rSemLimites = document.getElementById('semL')
 const questaoProf = document.getElementById('professor')
 
 
-function DezRodadas () {
+function DezRodadas (RodadasSelecionadas) {
     location.href = "Asrodadas.html"
+
+   
 }
+
+/* function CincoRodadas() {
+    location.href = "Asrodadas.html"
+
+}
+
+function TresRodadas() {
+    location.href = "Asrodadas.html"
+
+}
+
+function SemLimites() {
+    location.href = "Asrodadas.html" 
+}  */
  
 

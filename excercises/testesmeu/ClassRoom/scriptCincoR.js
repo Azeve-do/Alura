@@ -1,4 +1,3 @@
-
 var listaProfessores = [
     {nome: 'Luciana Cassia', turma: '1º Ano A'},
     {nome: 'Luciana Cassia ', turma: '1º Ano G'},
@@ -65,6 +64,7 @@ const listaSalas = [
     "5º Ano E",
 ]
 
+
 const idRodadas = document.getElementById('identificacao-rodadas');
 const alternativa = document.getElementById('alternativa1')
 const alternativaDois = document.getElementById('alternativa2')
@@ -82,7 +82,7 @@ const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.leng
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 
 
-if (DezRodadas) {
+
 
     questaoProf.innerText = professorAleatorio
     const listaEscolhasAleatorias = []
@@ -143,7 +143,7 @@ if (DezRodadas) {
     valorInputTres.value = alternativasUnicas[2]
     valorInputQuatro.value = alternativasUnicas[3]
 
-}
+
 
 formulario.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -174,7 +174,7 @@ function somarRodadas () {
 
 var quantidadeDeRodadas = sessionStorage.getItem('Rodadas')
 
-if(quantidadeDeRodadas > 10) {
+if(quantidadeDeRodadas > 5) {
     sessionStorage.removeItem('Rodadas')
     window.open('páginaInicial.html', '_parent')
-}
+} 
