@@ -4,25 +4,23 @@ const tresR = document.getElementById('3r')
 const rSemLimites = document.getElementById('semL')
 const questaoProf = document.getElementById('professor')
 
-
-function DezRodadas (RodadasSelecionadas) {
+function DezRodadas () {
     location.href = "Asrodadas.html"
-
-   
 }
 
-/* function CincoRodadas() {
-    location.href = "Asrodadas.html"
+function CincoRodadas() {
+    location.href = "Asrodadas5.html"
 
-}
+} 
 
-function TresRodadas() {
+/* function TresRodadas() {
     location.href = "Asrodadas.html"
 
 }
 
 function SemLimites() {
     location.href = "Asrodadas.html" 
-}  */
+}   */
  
+    
 
