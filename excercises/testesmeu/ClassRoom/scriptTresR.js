@@ -80,9 +80,7 @@ const valorInputQuatro = document.getElementById("iquarta")
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 
-var rodadasLimites = 5
-
-
+var rodadasLimites = 3
 
 questaoProf.innerText = professorAleatorio
 const listaEscolhasAleatorias = []

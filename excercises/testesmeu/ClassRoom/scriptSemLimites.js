@@ -76,11 +76,10 @@ const valorInput = document.getElementById("iprimeira")
 const valorInputDois = document.getElementById("isegunda")
 const valorInputTres = document.getElementById("iterceira")
 const valorInputQuatro = document.getElementById("iquarta")
+const botaoSair = document.getElementById('botao-sair')
 
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
-
-var rodadasLimites = 5
 
 questaoProf.innerText = professorAleatorio
 const listaEscolhasAleatorias = []
@@ -98,7 +97,6 @@ listaProfessores.forEach((professor) => {
     var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
 
     if(professor.nome == professorAleatorio) {
-        console.log(professor.turma)
         if(professor.turma == listaEscolhasAleatorias[0] || professor.turma == listaEscolhasAleatorias[1] || professor.turma == listaEscolhasAleatorias[2]) {
             location.reload()
         } else {
@@ -108,11 +106,8 @@ listaProfessores.forEach((professor) => {
     }
 })
 
-console.log(listaEscolhasAleatorias)
-
 const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
 
-console.log(alternativasUnicas)
 
 while(alternativasUnicas.length < 4) {
 
@@ -140,8 +135,6 @@ valorInput.value = alternativasUnicas[0]
 valorInputDois.value = alternativasUnicas[1]
 valorInputTres.value = alternativasUnicas[2]
 valorInputQuatro.value = alternativasUnicas[3]
-
-
 
 formulario.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -172,13 +165,9 @@ function somarRodadas () {
 
 var quantidadeDeRodadas = sessionStorage.getItem('Rodadas')
 
-decisaoDeRodadas(rodadasLimites)
+botaoSair.addEventListener('click', (event) => {
+    event.preventDefault()
 
-function decisaoDeRodadas (rodadasLimites) {
-
-    if(quantidadeDeRodadas > rodadasLimites) {
-        sessionStorage.removeItem('Rodadas')
-        window.open('páginaInicial.html', '_parent')
-    }
-
-}
+    sessionStorage.removeItem('Rodadas')
+    location.href = "páginaInicial.html"
+})

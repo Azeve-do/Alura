@@ -5,7 +5,7 @@ const rSemLimites = document.getElementById('semL')
 const questaoProf = document.getElementById('professor')
 
 function DezRodadas () {
-    location.href = "Asrodadas.html"
+    location.href = "Asrodadas10.html"
 }
 
 function CincoRodadas() {
@@ -13,14 +13,14 @@ function CincoRodadas() {
 
 } 
 
-/* function TresRodadas() {
-    location.href = "Asrodadas.html"
+function TresRodadas() {
+    location.href = "Asrodadas3.html"
 
 }
 
 function SemLimites() {
-    location.href = "Asrodadas.html" 
-}   */
+    location.href = "AsrodadasSemLimites.html" 
+}   
  
     
 
