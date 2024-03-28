@@ -42,7 +42,7 @@
     <button class="continue__button" id="botao-sair">SAIR</button>
 
 
-    <dialog class="modal">
+    <dialog id="modal">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +55,7 @@
         </head>
 
         <section class="Soluçao">
-            <h1 class="texto-acertou-ou-errou" id="texto-errou">ERROU!</h1>
+            <h1 class="texto-acertou-ou-errou" id="texto-resposta"></h1>
             <p class="texto-simples" id="texto-resposta-certa"></p>
     
             <div class="opçoes-apos-rodada">
@@ -64,22 +64,6 @@
             </div>
     
         </section>
-
-        <script>
-
-            const botaoProxRodada = document.getElementById('btn-prox-rodada')
-            const botaoPaginaInicial = document.getElementById('btn-paginaInicial')
-    
-            botaoProxRodada.addEventListener('click', () => {
-                location.href = 'AsrodadasSemlimites.html'
-            })
-    
-            botaoPaginaInicial.addEventListener('click', () => {
-                sessionStorage.removeItem('Rodadas')
-                location.href = 'páginaInicial.html'
-            })
-    
-        </script>
     </dialog>
 
     <script src="script.js"></script>

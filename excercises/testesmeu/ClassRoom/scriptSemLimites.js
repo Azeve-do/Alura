@@ -64,27 +64,38 @@ const listaSalas = [
     "5º Ano E",
 ]
 
-const modal = document.querySelector('dialog')
-var respostaCerta = document.querySelector('#texto-resposta-certa')
+// ------ VARIÁVEIS PARA EXIBIÇÃO DO FRONT-END
 const idRodadas = document.getElementById('identificacao-rodadas');
 const alternativa = document.getElementById('alternativa1')
 const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
 const alternativaQuatro = document.getElementById('alternativa4')
 
-const formulario = document.getElementById('form')
 
+// ------ VARIÁVEIS PARA O SUBMIT DO FORM
+const formulario = document.getElementById('form')
 const valorInput = document.getElementById("iprimeira")
 const valorInputDois = document.getElementById("isegunda")
 const valorInputTres = document.getElementById("iterceira")
 const valorInputQuatro = document.getElementById("iquarta")
 const botaoSair = document.getElementById('botao-sair')
 
+
+// ------ VARIÁVEIS PARA O MODAL ----------
+const modal = document.querySelector('#modal')
+const botaoProxRodada = document.getElementById('btn-prox-rodada')
+const botaoPaginaInicial = document.getElementById('btn-paginaInicial')
+var textoAcertoOuErro = document.querySelector('#texto-resposta')
+var respostaCerta = document.querySelector('#texto-resposta-certa')
+
+
+// ------ VARIÁVEIS PARA O BACK-END
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
+const listaEscolhasAleatorias = []
+
 
 questaoProf.innerText = professorAleatorio
-const listaEscolhasAleatorias = []
 
 while (listaEscolhasAleatorias.length < 3){
 
@@ -124,10 +135,6 @@ while(alternativasUnicas.length < 4) {
     
 } 
 
-if(alternativasUnicas.length == 3) {
-    alert('para')
-}
-
 alternativa.innerText = alternativasUnicas[0]
 alternativaDois.innerText = alternativasUnicas[1]
 alternativaTres.innerText = alternativasUnicas[2]
@@ -145,8 +152,12 @@ formulario.addEventListener('submit', (event) => {
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
             if(professor.turma == selected) {
-                location.href = "telaAcerto.html"
+                textoAcertoOuErro.style.backgroundColor = '#62D467'
+                textoAcertoOuErro.innerHTML = 'ACERTOU!'
+                modal.showModal()
             } else { 
+                textoAcertoOuErro.style.backgroundColor = '#D46262'
+                textoAcertoOuErro.innerHTML = 'ERROU!'
                 respostaCerta.innerText = `R: ${professor.turma}`
                 modal.showModal()
             }
@@ -165,11 +176,18 @@ function somarRodadas () {
     sessionStorage.setItem('Rodadas', idRodadas.innerText)
 }
 
-var quantidadeDeRodadas = sessionStorage.getItem('Rodadas')
-
 botaoSair.addEventListener('click', (event) => {
     event.preventDefault()
 
     sessionStorage.removeItem('Rodadas')
     location.href = "páginaInicial.html"
+})
+
+botaoProxRodada.addEventListener('click', () => {
+    location.href = 'AsrodadasSemlimites.html'
+})
+
+botaoPaginaInicial.addEventListener('click', () => {
+    sessionStorage.removeItem('Rodadas')
+    location.href = 'páginaInicial.html'
 })

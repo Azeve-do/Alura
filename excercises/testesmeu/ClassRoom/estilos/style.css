@@ -184,7 +184,7 @@ body {
   background-color: #D46262;
 }
 
-.modal {
+#modal {
   width: 600px;
   height: 830px;
   background-color: #a784f2;
