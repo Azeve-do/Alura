@@ -16,6 +16,12 @@ body {
   align-items: center;
 }
 
+.texto-simples {
+  font: normal 30px Bellota;
+  color: #ffffff;
+  -webkit-text-stroke-color: #0052f2;
+}
+
 .content__jogar {
   display: flex;
   align-items: center;
@@ -102,12 +108,14 @@ body {
 }
 
 .radio-box {
+  appearance: none;
+
   -webkit-appearance: none;
   background-color: transparent;
   border: solid 1px #FFF;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  border-radius: 5px;
+  width: 1.3em;
+  height: 1.3em;
 }
 
 .radio-box:checked {
@@ -143,7 +151,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  gap: 4em;
+  gap: 0em;
 }
 
 .texto-acertou-ou-errou {
@@ -170,4 +178,15 @@ body {
 .botao-prosseguir {
   border-radius: 15px;
   padding: 0.5em;
+}
+
+#texto-errou {
+  background-color: #D46262;
+}
+
+.modal {
+  width: 600px;
+  height: 830px;
+  background-color: #a784f2;
+  border: none;
 }

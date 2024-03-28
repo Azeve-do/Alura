@@ -64,6 +64,8 @@ const listaSalas = [
     "5º Ano E",
 ]
 
+const modal = document.querySelector('dialog')
+var respostaCerta = document.querySelector('#texto-resposta-certa')
 const idRodadas = document.getElementById('identificacao-rodadas');
 const alternativa = document.getElementById('alternativa1')
 const alternativaDois = document.getElementById('alternativa2')
@@ -143,10 +145,10 @@ formulario.addEventListener('submit', (event) => {
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
             if(professor.turma == selected) {
-                /* alert('acertou') */
-                location.reload()
+                location.href = "telaAcerto.html"
             } else { 
-                location.reload()
+                respostaCerta.innerText = `R: ${professor.turma}`
+                modal.showModal()
             }
         }
     })

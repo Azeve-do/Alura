@@ -12,7 +12,8 @@
 </head>
 <body>
     <section class="Soluçao">
-        <h1 class="texto-acertou-ou-errou">ACERTOU!</h1>
+        <h1 class="texto-acertou-ou-errou" id="texto-errou">ERROU!</h1>
+        <h2 class="texto-simples" id="texto-resposta-certa"></h2>
 
         <div class="opçoes-apos-rodada">
             <button class="botao botao-prosseguir" id="btn-prox-rodada">PRÓXIMA RODADA</button>
@@ -21,7 +22,9 @@
 
     </section>
 
+
     <script>
+
         const botaoProxRodada = document.getElementById('btn-prox-rodada')
         const botaoPaginaInicial = document.getElementById('btn-paginaInicial')
 
@@ -33,6 +36,7 @@
             sessionStorage.removeItem('Rodadas')
             location.href = 'páginaInicial.html'
         })
+
     </script>
 </body>
 </html>

@@ -148,11 +148,12 @@ formulario.addEventListener('submit', (event) => {
     var selected = document.querySelector("input[name='resposta']:checked").value;
 
     listaProfessores.forEach((professor) => {
-        if(professor.nome == professorAleatorio) {
+        if(professor.nome == professorAleatorio) { 
             if(professor.turma == selected) {
-                /* alert('acertou') */
+                alert('Acertou!')
                 location.reload()
-            } else { 
+            } else {
+                alert(`Errou! Resposta certa: ${professor.turma}`) 
                 location.reload()
             }
         }
