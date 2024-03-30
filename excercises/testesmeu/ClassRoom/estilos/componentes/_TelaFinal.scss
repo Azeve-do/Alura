@@ -1,0 +1,28 @@
+.titulo-encerramento {
+    font: normal 3em $font-principal;
+    color: $cor-branca;
+
+    text-align: center;
+
+    -webkit-text-stroke-color: $cor-preta;
+    -webkit-text-stroke-width: 1.3px;
+}
+
+.botao-encerramento {
+    margin: auto;
+
+    font-size: 15px;
+    width: 230px;
+    height: 45px;
+}
+
+.contagem-de-rounds {
+    width: 100px;
+    height: 100px;
+
+    background: $cor-secundaria;
+    
+    box-shadow: inset 10px 0 $cor-primaria;
+
+    align-self: end;
+}

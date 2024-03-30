@@ -55,6 +55,8 @@ body {
 
     -webkit-text-stroke-color: $borda-letras__botoes;
     -webkit-text-stroke-width: 1px;
+
+    cursor: pointer;
 }
 
 .radio-box {
@@ -63,10 +65,11 @@ body {
     background-color: transparent;
 
     border: solid 1px $cor-branca;
-    border-radius: 50%;
+    border-radius: 5px;
+    width: 1.3em;
+    height: 1.3em;
 
-    width: 20px;
-    height: 20px;
+    cursor: pointer;
 }
 
 .radio-box:checked {
@@ -79,7 +82,7 @@ body {
     text-align: center;
 
     padding: 0.5em;
-    margin-top: 5em;
+    margin-top: 1.5em;
 
     background-color: transparent;
 

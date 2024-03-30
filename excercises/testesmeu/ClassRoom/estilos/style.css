@@ -10,16 +10,23 @@ body {
   background-color: #A784F2;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#modal {
+  width: 600px;
+  height: 830px;
+  background-color: #a784f2;
+  border: none;
 }
 
 .texto-simples {
   font: normal 30px Bellota;
   color: #ffffff;
   -webkit-text-stroke-color: #0052f2;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content__jogar {
@@ -108,14 +115,13 @@ body {
 }
 
 .radio-box {
-  appearance: none;
-
   -webkit-appearance: none;
   background-color: transparent;
   border: solid 1px #FFF;
   border-radius: 5px;
   width: 1.3em;
   height: 1.3em;
+  cursor: pointer;
 }
 
 .radio-box:checked {
@@ -127,7 +133,7 @@ body {
   text-decoration: none;
   text-align: center;
   padding: 0.5em;
-  margin-top: 2em;
+  margin-top: 1.5em;
   background-color: transparent;
   border: solid 0.2em #FFF;
   border-radius: 0.5em;
@@ -135,14 +141,9 @@ body {
   -webkit-text-stroke-width: 1px;
 }
 
-.continue__button:hover, #botao-sair:hover{
+.continue__button:hover, .continue__button:active {
   color: #FFF;
   background-color: #465ee7;
-}
-
-#botao-sair {
-  margin-top: 0.85em;
-  width: 20%;
 }
 
 .Soluçao {
@@ -180,13 +181,30 @@ body {
   padding: 0.5em;
 }
 
-#texto-errou {
-  background-color: #D46262;
+#botao-sair {
+  margin-top: 0.85em;
+  width: 20%;
 }
 
-#modal {
-  width: 600px;
-  height: 830px;
-  background-color: #a784f2;
-  border: none;
+.titulo-encerramento {
+  font: normal 3em Bellota;
+  color: #FFF;
+  text-align: center;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-stroke-width: 1.3px;
 }
+
+.botao-encerramento {
+  margin: auto;
+  font-size: 15px;
+  width: 230px;
+  height: 45px;
+}
+
+.contagem-de-rounds {
+  width: 100px;
+  height: 100px;
+  background: #EFAC6E;
+  box-shadow: inset 10px 0 #A784F2;
+  align-self: end;
+}/*# sourceMappingURL=style.css.map */

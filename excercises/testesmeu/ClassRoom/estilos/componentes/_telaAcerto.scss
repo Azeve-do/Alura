@@ -6,7 +6,7 @@
     align-items: center;
     
     flex-flow: column;
-    gap: 4em;
+    gap: 0em;
 }
 
 .texto-acertou-ou-errou {
@@ -39,3 +39,9 @@
     border-radius: 15px;
     padding: 0.5em;
 }
+
+#botao-sair {
+    margin-top: 0.85em;
+    width: 20%;
+}
+  

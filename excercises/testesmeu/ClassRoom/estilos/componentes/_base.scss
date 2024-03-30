@@ -2,6 +2,7 @@
 
 // ----------- VARIÁVEIS -------------
 
+
 // ----------- CORES ------------
 
 $cor-primaria: #A784F2;
@@ -35,4 +36,17 @@ html, body {
 
 body {
     background-color: $cor-primaria;
+}
+
+#modal {
+    width: 600px;
+    height: 830px;
+    background-color: #a784f2;
+    border: none;
+}
+
+.texto-simples {
+    font: normal 30px Bellota;
+    color: #ffffff;
+    -webkit-text-stroke-color: #0052f2;
 }
