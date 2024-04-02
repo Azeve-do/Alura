@@ -71,7 +71,6 @@ const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
 const alternativaQuatro = document.getElementById('alternativa4')
 
-
 // ------ VARIÁVEIS PARA O SUBMIT DO FORM
 const formulario = document.getElementById('form')
 const valorInput = document.getElementById("iprimeira")
@@ -83,17 +82,18 @@ const botaoSair = document.getElementById('botao-sair')
 
 // ------ VARIÁVEIS PARA O MODAL ----------
 const modal = document.querySelector('#modal')
+const modal2 = document.querySelector('#modal2')
 const botaoProxRodada = document.getElementById('btn-prox-rodada')
 const botaoPaginaInicial = document.getElementById('btn-paginaInicial')
 var textoAcertoOuErro = document.querySelector('#texto-resposta')
 var respostaCerta = document.querySelector('#texto-resposta-certa')
 
+const contagemAcertos = document.getElementById('contagem-de-acertos')
 
 // ------ VARIÁVEIS PARA O BACK-END
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 const listaEscolhasAleatorias = []
-
 
 questaoProf.innerText = professorAleatorio
 
@@ -121,7 +121,6 @@ listaProfessores.forEach((professor) => {
 
 const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
 
-
 while(alternativasUnicas.length < 4) {
 
     var opçoesIndex = Math.floor(Math.random () * listaSalas.length)
@@ -145,13 +144,16 @@ valorInputDois.value = alternativasUnicas[1]
 valorInputTres.value = alternativasUnicas[2]
 valorInputQuatro.value = alternativasUnicas[3]
 
+
 formulario.addEventListener('submit', (event) => {
     event.preventDefault()
-    var selected = document.querySelector("input[name='resposta']:checked").value;
 
+    var selected = document.querySelector("input[name='resposta']:checked").value;
+    
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
             if(professor.turma == selected) {
+                contarAcertos()
                 textoAcertoOuErro.style.backgroundColor = '#62D467'
                 textoAcertoOuErro.innerHTML = 'ACERTOU!'
                 modal.showModal()
@@ -164,9 +166,8 @@ formulario.addEventListener('submit', (event) => {
         }
     })
     
-    if (selected) {
-        somarRodadas()
-    }
+    somarRodadas()                
+
 })
 
 idRodadas.innerText = sessionStorage.getItem('Rodadas') || '1'
@@ -176,9 +177,15 @@ function somarRodadas () {
     sessionStorage.setItem('Rodadas', idRodadas.innerText)
 }
 
+function contarAcertos () {
+    contagemAcertos.innerHTML = parseInt(contagemAcertos.innerText) + 1;
+    sessionStorage.setItem('contagem', contagemAcertos.innerText)
+}
+
 botaoSair.addEventListener('click', (event) => {
     event.preventDefault()
 
+    sessionStorage.removeItem('contagem')
     sessionStorage.removeItem('Rodadas')
     location.href = "páginaInicial.html"
 })
@@ -188,6 +195,9 @@ botaoProxRodada.addEventListener('click', () => {
 })
 
 botaoPaginaInicial.addEventListener('click', () => {
+    sessionStorage.removeItem('contagem')
     sessionStorage.removeItem('Rodadas')
-    location.href = 'páginaInicial.html'
+    modal2.showModal()
 })
+
+contagemAcertos.innerText = sessionStorage.getItem('contagem') || '0' 
