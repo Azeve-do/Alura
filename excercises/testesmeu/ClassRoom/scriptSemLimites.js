@@ -77,7 +77,7 @@ const valorInput = document.getElementById("iprimeira")
 const valorInputDois = document.getElementById("isegunda")
 const valorInputTres = document.getElementById("iterceira")
 const valorInputQuatro = document.getElementById("iquarta")
-const botaoSair = document.getElementById('botao-sair')
+const botaoSair = document.querySelector('#botao-sair')
 
 
 // ------ VARIÁVEIS PARA O MODAL ----------
@@ -170,7 +170,9 @@ formulario.addEventListener('submit', (event) => {
 
 })
 
-idRodadas.innerText = sessionStorage.getItem('Rodadas') || '1'
+var NumeroRodadas = sessionStorage.getItem('Rodadas')
+
+idRodadas.innerText = NumeroRodadas || '1'
 
 function somarRodadas () {
     idRodadas.innerHTML = parseInt(idRodadas.innerText) + 1;
@@ -200,4 +202,12 @@ botaoPaginaInicial.addEventListener('click', () => {
     modal2.showModal()
 })
 
-contagemAcertos.innerText = sessionStorage.getItem('contagem') || '0' 
+var testeAcertos = sessionStorage.getItem('contagem')
+
+var intTesteAcertos = parseInt(testeAcertos)
+
+console.log(testeAcertos, NumeroRodadas)
+
+contagemAcertos.innerText = intTesteAcertos || '0'
+
+
