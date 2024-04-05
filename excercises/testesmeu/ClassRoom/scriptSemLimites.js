@@ -71,6 +71,7 @@ const alternativaDois = document.getElementById('alternativa2')
 const alternativaTres = document.getElementById('alternativa3')
 const alternativaQuatro = document.getElementById('alternativa4')
 
+
 // ------ VARIÁVEIS PARA O SUBMIT DO FORM
 const formulario = document.getElementById('form')
 const valorInput = document.getElementById("iprimeira")
@@ -87,13 +88,16 @@ const botaoProxRodada = document.getElementById('btn-prox-rodada')
 const botaoPaginaInicial = document.getElementById('btn-paginaInicial')
 var textoAcertoOuErro = document.querySelector('#texto-resposta')
 var respostaCerta = document.querySelector('#texto-resposta-certa')
-
 const contagemAcertos = document.getElementById('contagem-de-acertos')
+
 
 // ------ VARIÁVEIS PARA O BACK-END
 const professorAleatorioIndex = Math.floor(Math.random() * listaProfessores.length);
 const professorAleatorio = listaProfessores[professorAleatorioIndex].nome
 const listaEscolhasAleatorias = []
+var quantidadeAcerto = 0
+var intContagemAcertos = sessionStorage.getItem('contagem')
+
 
 questaoProf.innerText = professorAleatorio
 
@@ -166,8 +170,7 @@ formulario.addEventListener('submit', (event) => {
         }
     })
     
-    somarRodadas()                
-
+    somarRodadas() 
 })
 
 var NumeroRodadas = sessionStorage.getItem('Rodadas')
@@ -180,8 +183,10 @@ function somarRodadas () {
 }
 
 function contarAcertos () {
-    contagemAcertos.innerHTML = parseInt(contagemAcertos.innerText) + 1;
-    sessionStorage.setItem('contagem', contagemAcertos.innerText)
+    quantidadeAcerto = Number(intContagemAcertos) + 1
+    sessionStorage.setItem('contagem', quantidadeAcerto)
+
+    contagemAcertos.innerText = `0${quantidadeAcerto}/0${Number(NumeroRodadas) + 1}`
 }
 
 botaoSair.addEventListener('click', (event) => {
@@ -201,13 +206,3 @@ botaoPaginaInicial.addEventListener('click', () => {
     sessionStorage.removeItem('Rodadas')
     modal2.showModal()
 })
-
-var testeAcertos = sessionStorage.getItem('contagem')
-
-var intTesteAcertos = parseInt(testeAcertos)
-
-console.log(testeAcertos, NumeroRodadas)
-
-contagemAcertos.innerText = intTesteAcertos || '0'
-
-
