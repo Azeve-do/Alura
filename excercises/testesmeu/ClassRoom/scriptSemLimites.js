@@ -206,3 +206,5 @@ botaoPaginaInicial.addEventListener('click', () => {
     sessionStorage.removeItem('Rodadas')
     modal2.showModal()
 })
+
+console.log(contagemAcertos)
