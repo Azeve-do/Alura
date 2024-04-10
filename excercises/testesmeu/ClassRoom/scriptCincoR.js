@@ -150,6 +150,7 @@ valorInputDois.value = alternativasUnicas[1]
 valorInputTres.value = alternativasUnicas[2]
 valorInputQuatro.value = alternativasUnicas[3]
 
+quantidadeAcerto = Number(intContagemAcertos)
 
 formulario.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -158,7 +159,10 @@ formulario.addEventListener('submit', (event) => {
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
             if(professor.turma == selected) {
-                contarAcertos()
+                quantidadeAcerto += 1
+                sessionStorage.setItem('contagem', quantidadeAcerto)
+                contagemAcertos.innerText = `0${quantidadeAcerto}/0${Number(rodadasLimites)}`
+
                 textoAcertoOuErro.style.backgroundColor = '#62D467'
                 textoAcertoOuErro.innerHTML = 'ACERTOU!'
                 modal.showModal()
@@ -184,19 +188,14 @@ function somarRodadas () {
     sessionStorage.setItem('Rodadas', idRodadas.innerText)
 }
 
-function contarAcertos () {
-    quantidadeAcerto = Number(intContagemAcertos) + 1
-    sessionStorage.setItem('contagem', quantidadeAcerto)
-
-    contagemAcertos.innerText = `0${quantidadeAcerto - 1}/0${Number(rodadasLimites)}`
-}
-
-var quantidadeDeRodadas = sessionStorage.getItem('Rodadas')
-
 if(NumeroRodadas > rodadasLimites) {
-    contarAcertos()
+    contagemAcertos.innerText = `0${quantidadeAcerto}/0${Number(rodadasLimites)}`
+
+    sessionStorage.removeItem('contagem')
+    sessionStorage.removeItem('Rodadas')
     modal2.showModal()
 }
+
 
 botaoProxRodada.addEventListener('click', () => {
     location.href = 'Asrodadas5.html'

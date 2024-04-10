@@ -15,7 +15,7 @@ function CincoRodadas() {
 
 function TresRodadas() {
     location.href = "Asrodadas3.html"
-
+    sessionStorage.removeItem('contagem')
 }
 
 function SemLimites() {
