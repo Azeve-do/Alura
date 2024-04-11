@@ -1,9 +1,7 @@
 var listaProfessores = [
-    {nome: 'Luciana Cassia', turma: '1º Ano A'},
-    {nome: 'Luciana Cassia ', turma: '1º Ano G'},
+    {nome: 'Luciana Cassia', turma: '1º Ano A', turma2: '1º Ano G'},
     {nome: 'Jussara', turma: '1º Ano B'},
-    {nome: 'Aldenice', turma: '1º Ano C'},
-    {nome: 'Aldenice ', turma: '2º Ano G'},
+    {nome: 'Aldenice', turma: '1º Ano C', turma2: '2º Ano G'},
     {nome: 'Marli', turma: '1º Ano D'},
     {nome: 'Ana Marta', turma: '1º Ano E'},
     {nome: 'Ivana', turma: '1º Ano F'},
@@ -12,17 +10,14 @@ var listaProfessores = [
     {nome: 'Lenice', turma: '2º Ano C'},
     {nome: 'Ana Cristina', turma: '2º Ano D'},
     {nome: 'Silvia Araujo', turma: '2º Ano E'},
-    {nome: 'Graça', turma: '2º Ano F'},
-    {nome: 'Graça ', turma: '3º Ano B'},
+    {nome: 'Graça', turma: '3º Ano B', turma2: '2º Ano F'},
     {nome: 'Rosimere', turma: '3º Ano A'},
     {nome: 'Giscelia', turma: '3º Ano C'},
     {nome: 'Adriana Matreiro', turma: '3º Ano D'},
     {nome: 'Silvia Maria', turma: '3º Ano E'},
     {nome: 'Valeria', turma: '3º Ano F'},
-    {nome: 'Adriana Dias', turma: '4º Ano A'},
-    {nome: 'Adriana Dias ', turma: '5º Ano E'},
-    {nome: 'Vanilza', turma: '4º Ano B'},
-    {nome: 'Vanilza ', turma: '5º Ano C'},
+    {nome: 'Adriana Dias', turma: '4º Ano A', turma2: '5º Ano E'},
+    {nome: 'Vanilza', turma: '4º Ano B', turma2: '5º Ano C'},
     {nome: 'Lucimara Faria', turma: '4º Ano C'},
     {nome: 'Vilma', turma: '4º Ano D'},
     {nome: 'Luciane', turma: '4º Ano E'},
@@ -63,6 +58,13 @@ const listaSalas = [
     "5º Ano D",
     "5º Ano E",
 ]
+
+
+// ------ VARIÁVEIS PARA CORREÇÃO DE PROFESSORAS COM DUAS TURMAS
+var duasTurmas = ['turma', 'turma2']
+var n_aleatorio = Math.floor(Math.random() * duasTurmas.length);
+var retorno_aleatorio = duasTurmas[n_aleatorio]
+
 
 // ------ VARIÁVEIS PARA EXIBIÇÃO DO FRONT-END
 const idRodadas = document.getElementById('identificacao-rodadas');
@@ -113,12 +115,20 @@ while (listaEscolhasAleatorias.length < 3){
 
 
 listaProfessores.forEach((professor) => {
-    var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (0, 3 + 1))
+    var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (1, 4))
 
     if(professor.nome == professorAleatorio) {
-        console.log(professor.turma)
         if(professor.turma == listaEscolhasAleatorias[0] || professor.turma == listaEscolhasAleatorias[1] || professor.turma == listaEscolhasAleatorias[2]) {
             location.reload()
+
+        // Condição para escolher aleatoriamente a resposta certa entra a turma 1 e 2 (dos professores que possuem duas turmas).
+        } else if(Object.keys(professor).length == 3){
+            if(retorno_aleatorio == 'turma') {
+                listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)    
+            } else if (retorno_aleatorio == 'turma2') {
+                listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma2)  
+            }
+
         } else {
             listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
         }
