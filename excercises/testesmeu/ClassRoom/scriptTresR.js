@@ -201,8 +201,6 @@ function somarRodadas () {
 if(NumeroRodadas > rodadasLimites) {
     contagemAcertos.innerText = `0${quantidadeAcerto}/0${Number(rodadasLimites)}`
 
-    sessionStorage.removeItem('contagem')
-    sessionStorage.removeItem('Rodadas')
     modal2.showModal()
 }
 

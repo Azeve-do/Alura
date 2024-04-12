@@ -116,21 +116,21 @@ listaProfessores.forEach((professor) => {
     var numeroAleatorioEntreQuatro = Math.floor(Math.random() * (1, 4))
 
     if(professor.nome == professorAleatorio) {
-        if(professor.turma == listaEscolhasAleatorias[0] || professor.turma == listaEscolhasAleatorias[1] || professor.turma == listaEscolhasAleatorias[2]) {
-            location.reload()
-
+        listaEscolhasAleatorias.forEach((alternativas) => {
+            if(professor.turma == alternativas && professor.turma2 == alternativas) {
+                location.reload()
+            }
+        })
         // Condição para escolher aleatoriamente a resposta certa entra a turma 1 e 2 (dos professores que possuem duas turmas).
-        } else if(Object.keys(professor).length == 3){
+        if(Object.keys(professor).length == 3){
             if(retorno_aleatorio == 'turma') {
                 listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)    
-            } else if (retorno_aleatorio == 'turma2') {
+            } else {
                 listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma2)  
             }
-
         } else {
             listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)
         }
-
     }
 })
 
