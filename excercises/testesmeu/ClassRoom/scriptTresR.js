@@ -80,17 +80,17 @@ const valorInput = document.getElementById("iprimeira")
 const valorInputDois = document.getElementById("isegunda")
 const valorInputTres = document.getElementById("iterceira")
 const valorInputQuatro = document.getElementById("iquarta")
-const botaoSair = document.getElementById('botao-sair')
 
 
 // ------ VARIÁVEIS PARA O MODAL ----------
 const modal = document.querySelector('#modal')
 const modal2 = document.querySelector('#modal2')
 const botaoProxRodada = document.getElementById('btn-prox-rodada')
-const botaoPaginaInicial = document.getElementById('btn-paginaInicial')
+const botaoSair = document.getElementById('btn-Sair')
 var textoAcertoOuErro = document.querySelector('#texto-resposta')
 var respostaCerta = document.querySelector('#texto-resposta-certa')
 const contagemAcertos = document.getElementById('contagem-de-acertos')
+const voltarInicio = document.getElementById('voltarInicio')
 
 
 
@@ -123,9 +123,16 @@ listaProfessores.forEach((professor) => {
 
         // Condição para escolher aleatoriamente a resposta certa entra a turma 1 e 2 (dos professores que possuem duas turmas).
         } else if(Object.keys(professor).length == 3){
+
+            listaEscolhasAleatorias.forEach((alternativas) => {
+                if(professor.turma == alternativas && professor.turma2 == alternativas) {
+                    location.reload()
+                }
+            })
+
             if(retorno_aleatorio == 'turma') {
                 listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma)    
-            } else if (retorno_aleatorio == 'turma2') {
+            } else if (retorno_aleatorio == 'turma2'){
                 listaEscolhasAleatorias.splice(numeroAleatorioEntreQuatro, 0, professor.turma2)  
             }
 
@@ -135,7 +142,6 @@ listaProfessores.forEach((professor) => {
 
     }
 })
-
 const alternativasUnicas = Array.from(new Set(listaEscolhasAleatorias))
 
 while(alternativasUnicas.length < 4) {
@@ -169,10 +175,9 @@ formulario.addEventListener('submit', (event) => {
 
     listaProfessores.forEach((professor) => {
         if(professor.nome == professorAleatorio) {
-            if(professor.turma == selected) {
+            if(professor.turma == selected || professor.turma2 == selected) {
                 quantidadeAcerto += 1
                 sessionStorage.setItem('contagem', quantidadeAcerto)
-                contagemAcertos.innerText = `0${quantidadeAcerto}/0${Number(rodadasLimites)}`
 
                 textoAcertoOuErro.style.backgroundColor = '#62D467'
                 textoAcertoOuErro.innerHTML = 'ACERTOU!'
@@ -185,8 +190,8 @@ formulario.addEventListener('submit', (event) => {
             }
         }
     })
-
-    somarRodadas()
+    
+    somarRodadas() 
 })
 
 var NumeroRodadas = sessionStorage.getItem('Rodadas')
@@ -201,6 +206,9 @@ function somarRodadas () {
 if(NumeroRodadas > rodadasLimites) {
     contagemAcertos.innerText = `0${quantidadeAcerto}/0${Number(rodadasLimites)}`
 
+    sessionStorage.removeItem('Rodadas')
+    sessionStorage.removeItem('contagem')
+
     modal2.showModal()
 }
 
@@ -208,8 +216,17 @@ botaoProxRodada.addEventListener('click', () => {
     location.href = 'Asrodadas3.html'
 })
 
-botaoPaginaInicial.addEventListener('click', () => {
-    sessionStorage.removeItem('contagem')
+botaoSair.addEventListener('click', () => {
+    contagemAcertos.innerText = `0${quantidadeAcerto}/0${Number(rodadasLimites)}`
+
     sessionStorage.removeItem('Rodadas')
+    sessionStorage.removeItem('contagem')
     modal2.showModal()
 }) 
+
+voltarInicio.addEventListener('click', () => {
+    sessionStorage.removeItem('contagem')
+    sessionStorage.removeItem('Rodadas')
+
+    location.href = "páginaInicial.html"
+})
