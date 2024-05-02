@@ -1,4 +1,4 @@
-const user = {
+/* const user = {
     nome: "Caio",
     DN: "07/05/2023",
     email: "caio@paz.com",
@@ -29,4 +29,23 @@ const exibir = function () {
 const exibirNome = exibir.bind(user)
 
 exibirNome()
-exibir()
+exibir() */
+
+function User () {
+    const User2 = {
+        nome: 'Caio'
+    }
+    Object.setPrototypeOf(User, User2)
+    User.prototype.nome = 'Caio2'
+    console.log(this.nome)
+}
+
+
+
+
+User.prototype.teste = 'testesasas'
+
+
+let testeUm = new User()
+
+console.log(testeUm.teste)
