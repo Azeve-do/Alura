@@ -1,0 +1,13 @@
+{
+  "name": "aula16_objetos_orie",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "js copy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
