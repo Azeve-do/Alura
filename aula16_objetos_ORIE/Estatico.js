@@ -1,15 +1,16 @@
-class ChamadaDoMetodoEstatico {
-    constructor() {
-      console.log(ChamadaDoMetodoEstatico.MetodoEstatico());
-      // 'O método estático foi chamado.'
-  
-      console.log(this.constructor.MetodoEstatico());
-      // 'O método estático foi chamado.'
-    }
-  
-    static MetodoEstatico() {
-      return "O método estático foi chamado.";
-    }
+class Tripple {
+  static tripple(n) {
+    n = n | 1;
+    return n * 3;
+  }
 }
-  
-console.log(ChamadaDoMetodoEstatico.MetodoEstatico())
+
+class BiggerTripple extends Tripple {
+  static tripple(n) {
+    return super.tripple(n) * super.tripple(n);
+  }
+}
+
+console.log(Tripple.tripple(2));
+console.log(Tripple.tripple(10));
+console.log(BiggerTripple.tripple(5));
