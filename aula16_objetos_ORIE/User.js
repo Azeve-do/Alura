@@ -1,12 +1,14 @@
 export default class User {
     #nome
+    #sobrenome
     #email
     #nascimento
     #role
     #ativo
 
-    constructor(nome, email, nascimento, role, ativo = true) {
+    constructor(nome, sobrenome, email, nascimento, role, ativo = true) {
         this.#nome = nome
+        this.#sobrenome = sobrenome
         this.#email = email
         this.#nascimento = nascimento
         this.#role = role || 'Estudante'
@@ -14,7 +16,11 @@ export default class User {
     }
     
     get nome () {
-        return this.#nome
+        return `${this.#nome} ${this.#sobrenome}`
+    }
+
+    get sobrenome () {
+        return this.#sobrenome
     }
     
     get email () {
@@ -33,8 +39,19 @@ export default class User {
         return this.#ativo 
     }
 
+    set nome(novowNome) {
+        if(novoNome === '') {
+            throw new Error('Formato não válido')
+        }
+        
+        let [nome, sobrenome] = novoNome.split(" ")
+        sobrenome = sobrenome.join(" ")
+        this.#nome = nome
+        this.#sobrenome = sobrenome
+    }
+
     exibirInfos() {
-        return `${this.#nome}, ${this.#email}, ${this.#nascimento}, ${this.#role}, ${this.#ativo}`
+        return `${this.nome}, ${this.email}, ${this.nascimento}, ${this.role}, ${this.ativo}`
     }
 }
 
