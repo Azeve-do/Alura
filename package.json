@@ -1,0 +1,15 @@
+{
+  "name": "sss",
+  "version": "1.0.0",
+  "description": "t",
+  "main": "js.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "teste"
+  },
+  "keywords": [
+    "chave"
+  ],
+  "author": "caio",
+  "license": "ISC"
+}
