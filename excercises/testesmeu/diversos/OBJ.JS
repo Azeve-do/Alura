@@ -16,4 +16,4 @@ class Usuario {
 
 const novoUsuario = new Usuario ('Caio', 'caio@gmail.com')
 
-console.log(novoUsuario.exibirInfos())
+console.log(novoUsuario.exibirInfos())s
